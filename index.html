@@ -394,7 +394,7 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 .health-subnav::-webkit-scrollbar{display:none}
 .health-subnav button{flex:0 0 auto;border-radius:999px;min-height:43px;padding:9px 15px;background:rgba(255,252,244,.96);border:1px solid #e5ddca;color:#4e5146}
 .health-subnav button.active{background:#6b8567;color:#fffdf5;border-color:#6b8567}
-.health-form-card{padding-bottom:132px!important}
+.health-form-card{padding-bottom:150px!important}
 .health-form-card::after{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:125px!important;opacity:.94!important;background-image:linear-gradient(0deg,rgba(255,250,240,.02),rgba(255,250,240,0)),url('./meadow-watercolor.webp')!important;background-repeat:no-repeat!important;background-size:cover!important;background-position:center bottom!important;pointer-events:none!important;z-index:0!important}
 .health-form-card>*{position:relative;z-index:1}
 .health-grid{gap:0 14px}
@@ -422,7 +422,7 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
  .health-hero-copy{max-width:68%}.health-hero p{font-size:13px;line-height:1.7}
  .health-subnav{gap:6px}.health-subnav button{font-size:12px;padding:8px 12px;min-height:41px}
  .health-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
- .health-form-card{padding-bottom:118px!important}
+ .health-form-card{padding-bottom:150px!important}
  .health-form-card::after{height:132px!important;background-size:auto 132px!important;background-position:center bottom!important}
  .goal-card{gap:13px;padding:16px}.goal-card .animal{width:70px;height:70px;flex-basis:70px}.goal-card .quote{font-size:17px;line-height:1.65}
  .water-buttons button{min-height:76px;border-radius:17px}.mood{min-height:83px}
@@ -671,3 +671,16 @@ load();renderToday();renderTasks();renderWeek();renderCalendar();renderHistory()
 </script>
 </body>
 </html>
+<style id="storybook-scene-fix-v24">
+.health-form-card{padding-bottom:150px!important}
+.health-form-card::after{
+ height:150px!important;
+ background-size:cover!important;
+ background-position:center bottom!important;
+ background-image:linear-gradient(to top,rgba(255,250,240,0) 0%,rgba(255,250,240,.10) 35%,rgba(255,250,240,.76) 100%),url("./meadow-watercolor.webp")!important
+}
+@media(max-width:600px){
+ .health-form-card{padding-bottom:150px!important}
+ .health-form-card::after{height:150px!important;background-size:cover!important;background-position:center bottom!important}
+}
+</style>

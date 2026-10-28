@@ -1,4 +1,4 @@
-const CACHE_NAME='meiri-xiaoji-v23-save-button';
+const CACHE_NAME='meiri-xiaoji-v24-scene-fix';
 const APP_FILES = ['./', './index.html', './customers.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './woodland-scene.svg', './meadow-watercolor.webp', './bunny-corner.png', './mushroom-corner.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())); });
