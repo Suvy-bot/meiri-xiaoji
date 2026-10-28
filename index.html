@@ -132,6 +132,19 @@ button{border-color:#dfddcc;background:rgba(255,253,246,.96);box-shadow:0 2px 7p
 @media(min-width:700px){header,nav,main{max-width:1000px}.page:not(#page-today)::before,.page:not(#page-today)::after{height:142px}.nature-scene{min-height:155px}.card{padding:21px}}
 @media(max-width:420px){header{padding:20px 15px 10px}header h1{font-size:30px}.nature-scene{min-height:104px;background-position:center}nav{padding-bottom:13px}.page:not(#page-today)::before{height:95px;border-radius:21px}.page:not(#page-today)::after{height:95px}.card{border-radius:21px;padding:16px}.animal{width:74px;height:74px}.card:after{height:30px}}
 
+
+/* Visual correction: use the actual watercolor painting only in landscape banners. */
+.nature-scene{background-image:linear-gradient(180deg,rgba(255,251,239,.03),rgba(246,242,222,.06)),url('./meadow-watercolor.webp')!important;background-size:cover!important;background-position:center 58%!important;background-repeat:no-repeat!important;}
+.nature-scene svg{display:none!important;}
+.page:not(#page-today)::before{background-image:linear-gradient(180deg,rgba(255,251,239,.06),rgba(246,242,222,.1)),url('./meadow-watercolor.webp')!important;background-size:cover!important;background-position:center 60%!important;background-repeat:no-repeat!important;}
+.page:not(#page-today)::after{display:none!important;content:none!important;}
+/* Remove the repeated miniature banner strips that were crossing cards and text. */
+.card:before,.card:after,.card h2:after{display:none!important;content:none!important;background-image:none!important;}
+.encouragement{background:linear-gradient(115deg,rgba(255,251,239,.98),rgba(242,244,229,.98))!important;background-image:none!important;border:1px solid #e2dfcb!important;box-shadow:0 5px 16px rgba(83,96,70,.055)!important;}
+.metric,.period-stat,.taskrow,.notice,.empty{background-image:none;}
+.card{background:rgba(255,253,246,.97)!important;backdrop-filter:none!important;box-shadow:0 5px 18px rgba(91,91,64,.07)!important;}
+@media(max-width:520px){.nature-scene{background-position:center 60%!important;min-height:110px!important}.page:not(#page-today)::before{background-position:center 60%!important}}
+
 </style>
 </head>
 <body>
