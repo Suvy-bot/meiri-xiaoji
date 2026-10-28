@@ -31,7 +31,30 @@ body{background:radial-gradient(ellipse at 4% 5%,rgba(244,210,179,.48),transpare
 .card:after,.card h2:after{display:none!important;content:none!important;background-image:none!important;}
 .person{background:rgba(255,253,246,.98)!important;box-shadow:0 4px 13px rgba(91,91,64,.06)!important;}
 
+
+
+/* Matching full-page woodland watercolor system */
+:root{--bg:#f5f0e4;--paper:#fffaf0;--ink:#46483d;--muted:#858574;--line:#e4dbc8;--accent:#6c8568;--shadow:0 8px 24px rgba(83,92,68,.10)}
+body{background:radial-gradient(ellipse at 0 8%,rgba(241,211,186,.28),transparent 34%),radial-gradient(ellipse at 100% 18%,rgba(193,213,182,.32),transparent 34%),#f5f0e4;background-attachment:fixed;color:var(--ink)}
+.wrap{max-width:1120px}
+header{padding:22px 3px 12px}
+h1{font-size:clamp(27px,3vw,36px);color:#45483d}
+.customer-scene{height:clamp(118px,17vw,200px);margin:0 0 16px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.9);background:url('./meadow-watercolor.webp') center 61%/cover no-repeat;box-shadow:0 8px 22px rgba(84,103,76,.13)}
+.card{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,rgba(255,252,244,.985),rgba(255,249,236,.97))!important;border:1px solid rgba(224,216,196,.96)!important;border-radius:24px!important;box-shadow:0 7px 21px rgba(87,91,65,.075)!important}
+.card:before{display:none!important;content:none!important;background:none!important}
+.card:after{content:""!important;display:block!important;position:absolute!important;z-index:0!important;right:0!important;left:auto!important;top:auto!important;bottom:0!important;width:150px!important;height:100px!important;opacity:.55!important;background:url('./bunny-corner.png') right bottom/contain no-repeat!important;pointer-events:none!important}
+.card>*{position:relative;z-index:1}
+.person{position:relative;isolation:isolate;background:rgba(255,253,246,.98)!important;border-color:#e8e0d3!important;border-radius:20px!important;box-shadow:0 4px 13px rgba(91,91,64,.06)!important;overflow:hidden}
+.person:after{content:"";position:absolute;z-index:0;right:0;bottom:0;width:105px;height:72px;background:url('./mushroom-corner.png') left bottom/contain no-repeat;opacity:.32;pointer-events:none}
+.person>*{position:relative;z-index:1}
+button{border-color:#dfddcc;background:rgba(255,253,247,.98);border-radius:14px}
+.primary{background:linear-gradient(135deg,#829d7b,#5e7b5b)!important;border-color:#779171!important;color:#fffdf5!important}
+.tabs button.active{background:#e8eee2;border-color:#9eaf98;color:#586b55}
+input,select{background:rgba(255,254,248,.98);border-color:#e0ddcb;border-radius:13px}
+@media(max-width:600px){.wrap{padding-left:13px;padding-right:13px}header{padding-top:18px}.customer-scene{height:132px;border-radius:22px}.card{padding:16px!important;border-radius:21px!important}.card:after{width:118px!important;height:76px!important;opacity:.42!important}.person{padding:13px}}
+
 </style></head><body><div class="wrap"><header><div class="row"><a class="back" href="./index.html" aria-label="返回每日小记">‹</a><div><h1>顾客季卡</h1><p>独立管理顾客姓名与到访次数</p></div></div><button id="settingsBtn" class="small">导出备份</button></header>
+<div class="customer-scene" aria-hidden="true"></div>
 <div class="card"><h2>新增顾客</h2><div class="formgrid"><div class="field" style="margin:0"><label for="newName">顾客姓名</label><input id="newName" placeholder="输入顾客姓名"></div><div class="field" style="margin:0"><label for="newType">季卡类型</label><select id="newType"><option value="11">11 天季卡</option><option value="30">30 天季卡</option></select></div></div><button id="add" class="primary full" style="margin-top:12px">＋ 新增顾客</button></div>
 <div class="card"><div class="tabs"><button id="tabList" class="active">顾客列表</button><button id="tabVisits">到访记录</button></div><input class="search" id="search" placeholder="⌕ 搜索顾客姓名"><div id="list"></div><div id="visits" hidden></div></div><div class="footer">顾客季卡独立储存 · 与每日小记分开</div></div>
 <script>

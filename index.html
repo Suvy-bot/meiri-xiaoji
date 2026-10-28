@@ -232,6 +232,129 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(133,159,119,.25);
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+
+
+/* FINAL REDESIGN: full illustrated storybook cards, no stretched diagonal scene overlays */
+:root{
+ --bg:#f5f0e4;--paper:#fffaf0;--ink:#46483d;--muted:#858574;
+ --line:#e4dbc8;--accent:#6c8568;--green:#8ea987;--rose:#d6a19b;
+ --shadow:0 8px 24px rgba(83,92,68,.10);
+}
+html{background:#f5f0e4}
+body{
+ color:var(--ink);
+ background:
+  radial-gradient(ellipse at 0 8%,rgba(241,211,186,.28),transparent 34%),
+  radial-gradient(ellipse at 100% 18%,rgba(193,213,182,.32),transparent 34%),
+  #f5f0e4;
+ background-attachment:fixed;
+}
+header,nav,main{max-width:1440px}
+header{padding:22px 20px 10px}
+header .eyebrow{font-size:11px;letter-spacing:2.6px;color:#8c8d77;font-weight:750}
+header h1{font-size:clamp(28px,3vw,38px);color:#45483d;letter-spacing:.2px}
+header p{font-size:14px;color:#858574}
+.nature-scene{
+ height:clamp(118px,17vw,210px)!important;min-height:0!important;
+ margin-top:16px;border-radius:24px;overflow:hidden;
+ border:1px solid rgba(255,255,255,.9);
+ box-shadow:0 8px 22px rgba(84,103,76,.13);
+ background-image:url('./meadow-watercolor.webp')!important;
+ background-size:cover!important;background-repeat:no-repeat!important;
+ background-position:center 61%!important;opacity:1!important;
+}
+.nature-scene svg{display:none!important}
+nav{max-width:1440px;gap:9px;padding:5px 20px 17px}
+nav button,nav .nav-link{
+ min-height:45px;padding:10px 16px;font-size:14px;border-radius:999px;
+ background:rgba(255,252,244,.96);border:1px solid #e2dac8;
+ box-shadow:0 3px 9px rgba(82,95,72,.05);
+}
+nav button.active{background:#657f62;border-color:#657f62;box-shadow:0 5px 14px rgba(83,112,78,.2)}
+main{max-width:1440px;padding:0 20px 48px}
+.page{position:relative;min-width:0}
+.page:not(#page-today)::before{
+ content:"";display:block;height:clamp(112px,15vw,190px);margin:0 0 16px;
+ border-radius:24px;border:1px solid rgba(255,255,255,.9);
+ background-image:url('./meadow-watercolor.webp')!important;
+ background-size:cover!important;background-repeat:no-repeat!important;
+ background-position:center 60%!important;
+ box-shadow:0 8px 22px rgba(84,103,76,.12);
+}
+.page:not(#page-today)::after{display:none!important;content:none!important}
+.card{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:linear-gradient(145deg,rgba(255,252,244,.985),rgba(255,249,236,.97))!important;
+ border:1px solid rgba(224,216,196,.96)!important;border-radius:24px!important;
+ padding:19px!important;margin-bottom:15px!important;
+ box-shadow:0 7px 21px rgba(87,91,65,.075)!important;
+ backdrop-filter:none!important;
+}
+.card::before{display:none!important;content:none!important;background:none!important;mask-image:none!important}
+.card::after{
+ content:""!important;display:block!important;position:absolute!important;z-index:0!important;
+ right:0!important;left:auto!important;top:auto!important;bottom:0!important;
+ width:150px!important;height:100px!important;opacity:.64!important;
+ background-image:url('./bunny-corner.png')!important;background-repeat:no-repeat!important;
+ background-size:contain!important;background-position:right bottom!important;
+ pointer-events:none!important;transform:none!important;
+}
+.card:nth-child(even)::after{
+ background-image:url('./mushroom-corner.png')!important;
+ width:138px!important;height:88px!important;opacity:.56!important;
+ background-position:left bottom!important;
+}
+.card>*{position:relative;z-index:1}
+.card h2{font-size:18px;color:#4d5947;margin-bottom:13px;letter-spacing:.15px}
+.card h2:before{content:"";display:inline-block;width:7px;height:18px;border-radius:8px;background:#9caf91;margin-right:10px;vertical-align:-3px;box-shadow:none}
+.card h2:after{display:none!important;content:none!important;background:none!important}
+.metric,.period-stat{
+ background:linear-gradient(135deg,rgba(242,241,226,.98),rgba(249,241,222,.98))!important;
+ border:1px solid #e6e2d0!important;border-radius:18px!important;
+}
+button{border-color:#dfddcc;background:rgba(255,253,247,.98);border-radius:15px;box-shadow:0 2px 7px rgba(95,100,75,.035)}
+button.primary,.primary{background:linear-gradient(135deg,#829d7b,#5e7b5b)!important;border-color:#779171!important;color:#fffdf5!important;box-shadow:0 5px 13px rgba(89,122,82,.16)!important}
+button.soft{background:#eef0e1;border-color:#dce3d2}
+input,textarea,select{background:rgba(255,254,248,.98);border-color:#e0ddcb;border-radius:14px}
+input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3px #dce8d580}
+.encouragement{
+ background:linear-gradient(120deg,rgba(255,252,241,.98),rgba(238,243,229,.98))!important;
+ border:1px dashed #d1d9c7!important;box-shadow:0 7px 18px rgba(102,123,91,.07)!important;
+}
+.encouragement::before{display:none!important}
+.animal{width:82px;height:82px}
+.water-buttons button{min-height:82px;border-radius:19px}
+.water-buttons button.primary{background:#f7e0d0!important;color:#4d5146!important;border-color:#edd1bd!important}
+.water-progress{background:#e4e9dc}.water-progress span{background:linear-gradient(90deg,#b6c8b0,#8da78d)}
+.mood{border-radius:17px;background:#fffdf8;border-color:#e6e1d4}
+.mood.selected{background:#e8eee2;border-color:#9eaf98}
+.task-section-label{background:#f8e5dc;color:#865a4b}.task-section-label.repeat-tag{background:#657b65;color:#fffdf6}
+.notice{background:#f0f1e6;border-color:#e0e3d6}.empty{background:#faf9f0;border-color:#dfe2d4}
+.footer{color:#8d927f}
+@media(min-width:900px){
+ .page#page-today.active{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;align-items:start}
+ #page-today>.encouragement,#page-today>.card:nth-child(5),#page-today>.card:nth-child(6){grid-column:1/-1}
+ #page-today>.card{min-width:0}
+ #page-today>.card:nth-child(2){grid-column:1}
+ #page-today>.card:nth-child(3){grid-column:2}
+ #page-today>.card:nth-child(4){grid-column:1/-1}
+ main{padding-left:24px;padding-right:24px}
+}
+@media(max-width:600px){
+ header{padding:18px 16px 10px}
+ .nature-scene{height:132px!important;margin-top:13px;border-radius:22px}
+ nav{padding-left:14px;padding-right:14px;gap:7px}
+ nav button,nav .nav-link{min-height:43px;padding:9px 14px;font-size:13px}
+ main{padding:0 13px 34px}
+ .page:not(#page-today)::before{height:112px;margin-bottom:13px;border-radius:21px}
+ .card{padding:16px!important;border-radius:21px!important;margin-bottom:13px!important}
+ .card::after{width:118px!important;height:76px!important;opacity:.46!important}
+ .card:nth-child(even)::after{width:110px!important;height:70px!important;opacity:.4!important}
+ .animal{width:68px;height:68px}
+ .water-buttons button{min-height:76px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
