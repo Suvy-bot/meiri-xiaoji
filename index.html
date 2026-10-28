@@ -54,7 +54,7 @@ nav button{background:#fffdf7;border-color:#e2dacb}nav button.active{background:
 <body>
 <header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p></header>
 <nav id="nav">
-<button class="active" data-page="today">今日</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="period" id="periodNav">身体记录</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>
+<button class="active" data-page="today">今日</button><button data-page="period" id="periodNav">健康记录</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>
 </nav>
 <main>
 <section class="page active" id="page-today">
@@ -81,7 +81,7 @@ nav button{background:#fffdf7;border-color:#e2dacb}nav button.active{background:
 <section class="page" id="page-calendar"><div class="card"><div class="calendar-head"><button id="prevMonth">‹ 上个月</button><h2 id="monthTitle" style="margin:0"></h2><button id="nextMonth">下个月 ›</button></div><div class="calendar-grid" id="calendar"></div><p class="sub">点选日期即可查看或编辑当天记录；有记录的日期会显示小点。</p></div><div class="card"><h2 id="calendarDayTitle">所选日期</h2><div id="calendarSummary" class="empty">选择日期查看记录。</div><button class="primary" id="goSelectedDay" style="width:100%">编辑这一天</button></div></section>
 <section class="page" id="page-history"><div class="card"><h2>搜索旧记录</h2><input id="searchInput" placeholder="搜索日期、随笔、待办或心情"><div class="row" style="margin-top:8px"><input type="date" id="fromDate" aria-label="开始日期"><input type="date" id="toDate" aria-label="结束日期"></div><button id="clearSearch" class="smallbtn" style="margin-top:8px">清除筛选</button></div><div class="card"><h2>最近记录</h2><div id="historyList"></div></div><div class="card"><h2>最近 7 天喝水量</h2><div class="chart" id="waterChart"></div><p class="sub">柱状图按每天的总毫升数显示。</p></div><div class="card"><h2>最近 7 天任务完成</h2><div class="chart" id="taskChart"></div><p class="sub">按每天完成的任务次数汇总；同一任务不同日期的完成分别记录。</p></div></section>
 <section class="page" id="page-period">
-<div class="card"><div class="row between"><h2>身体记录</h2><span class="sub">只在本机保存</span></div><p class="sub">记录身体变化、睡眠、体重与不适；经期记录是可选的一部分，不需要选择性别。</p>
+<div class="card"><div class="row between"><h2>健康记录</h2><span class="sub">只在本机保存</span></div><p class="sub">记录身体变化、睡眠、体重与不适；经期记录是可选的一部分，不需要选择性别。</p>
 <div class="field"><label for="healthDate">记录日期</label><input type="date" id="healthDate"></div>
 <div class="health-grid">
 <div class="field"><label for="sleepHours">睡眠时长（小时）</label><input type="number" id="sleepHours" min="0" max="24" step="0.25" placeholder="例如 7.5"></div>
