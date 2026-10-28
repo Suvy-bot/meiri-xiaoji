@@ -463,9 +463,9 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 <section class="page" id="page-calendar"><div class="card"><div class="calendar-head"><button id="prevMonth">‹ 上个月</button><h2 id="monthTitle" style="margin:0"></h2><button id="nextMonth">下个月 ›</button></div><div class="calendar-grid" id="calendar"></div><p class="sub">点选日期即可查看或编辑当天记录；有记录的日期会显示小点。</p></div><div class="card"><h2 id="calendarDayTitle">所选日期</h2><div id="calendarSummary" class="empty">选择日期查看记录。</div><button class="primary" id="goSelectedDay" style="width:100%">编辑这一天</button></div></section>
 <section class="page" id="page-history"><div class="card"><h2>搜索旧记录</h2><input id="searchInput" placeholder="搜索日期、随笔、待办或心情"><div class="row" style="margin-top:8px"><input type="date" id="fromDate" aria-label="开始日期"><input type="date" id="toDate" aria-label="结束日期"></div><button id="clearSearch" class="smallbtn" style="margin-top:8px">清除筛选</button></div><div class="card"><h2>最近记录</h2><div id="historyList"></div></div><div class="card"><h2>最近 7 天喝水量</h2><div class="chart" id="waterChart"></div><p class="sub">柱状图按每天的总毫升数显示。</p></div><div class="card"><h2>最近 7 天任务完成</h2><div class="chart" id="taskChart"></div><p class="sub">按每天完成的任务次数汇总；同一任务不同日期的完成分别记录。</p></div></section>
 <section class="page health-page" id="page-period">
-<div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>记录身体变化、睡眠、体重与不适；<br>经期记录是可选的一部分，不需要选择性别。</p></div></div>
+<div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>记录睡眠、体重与身体变化。</p></div></div>
 <div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form">♧ 身体记录</button><button data-health-target="weight-panel">▥ 体重追踪</button><button data-health-target="period-panel">▣ 经期记录</button><button data-health-target="healthHistory">▤ 历史记录</button></div>
-<div class="card health-form-card" id="health-form"><div class="row between"><h2>记录身体状态</h2><span class="sub">只在本机保存</span></div><p class="sub">记录身体变化、睡眠、体重与不适；经期记录是可选的一部分，不需要选择性别。</p>
+<div class="card health-form-card" id="health-form">
 <div class="field"><label for="healthDate">记录日期</label><input type="date" id="healthDate"></div>
 <div class="health-grid">
 <div class="field"><label for="sleepHours">睡眠时长（小时）</label><input type="number" id="sleepHours" min="0" max="24" step="0.25" placeholder="例如 7.5"></div>
@@ -703,6 +703,58 @@ load();renderToday();renderTasks();renderWeek();renderCalendar();renderHistory()
 }
 @media(max-width:360px){
  .save-scene-art{flex-basis:54px;width:54px;height:72px}
+ #saveHealthDay{font-size:14px!important}
+}
+</style>
+
+<style id="storybook-unified-scene-v26">
+/* One coherent watercolor scene; text stays in the open sky and never overlaps the rabbit. */
+.health-hero{
+ min-height:218px!important;
+ background-image:linear-gradient(90deg,rgba(255,249,234,.96) 0%,rgba(255,249,234,.78) 34%,rgba(255,249,234,.12) 57%,rgba(255,249,234,0) 100%),url("./health-woodland-scene.png")!important;
+ background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;
+ border:1px solid rgba(255,255,255,.8)!important;
+}
+.health-hero-copy{max-width:48%!important}
+.health-hero h2{margin-bottom:8px!important}
+.health-hero p{max-width:100%;font-size:14px!important;line-height:1.65!important}
+.health-hero .health-leaf{font-size:23px!important}
+.health-form-card{padding-bottom:16px!important}
+.health-form-card::after{display:none!important;content:none!important;background:none!important}
+.save-scene-wrap{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ position:relative!important;isolation:isolate!important;
+ width:100%!important;min-height:104px!important;margin:14px auto 0!important;
+ padding:14px 8px!important;gap:0!important;overflow:hidden!important;border-radius:18px!important;
+ background-color:#f8f1df!important;
+ background-image:url("./save-meadow-scene.png")!important;
+ background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.save-scene-art{display:none!important}
+#saveHealthDay{
+ display:block!important;position:relative!important;z-index:2!important;
+ flex:0 1 54%!important;width:54%!important;max-width:420px!important;min-width:0!important;
+ min-height:52px!important;margin:0 auto!important;padding:10px 14px!important;
+ border-radius:999px!important;background:linear-gradient(135deg,#7d9976,#587b57)!important;
+ border:1px solid rgba(80,119,77,.65)!important;color:#fffdf3!important;
+ font-size:17px!important;font-weight:700!important;letter-spacing:.5px!important;
+ box-shadow:0 4px 11px rgba(69,96,63,.16),inset 0 1px 0 rgba(255,255,255,.22)!important;
+ white-space:nowrap!important;
+}
+.save-status{margin-top:7px!important;text-align:center!important;font-size:12px!important;color:#96907f!important}
+@media(max-width:600px){
+ .health-hero{min-height:174px!important;background-size:auto 100%!important;background-position:right center!important}
+ .health-hero-copy{max-width:55%!important}
+ .health-hero h2{font-size:24px!important}
+ .health-hero p{font-size:13px!important;line-height:1.6!important}
+ .health-form-card{padding-bottom:15px!important}
+ .save-scene-wrap{min-height:90px!important;margin-top:12px!important;padding:10px 5px!important;border-radius:16px!important;background-size:100% 100%!important}
+ #saveHealthDay{flex-basis:58%!important;width:58%!important;min-height:48px!important;font-size:15px!important;padding:9px 6px!important}
+}
+@media(max-width:370px){
+ .health-hero-copy{max-width:58%!important}
+ .health-hero h2{font-size:22px!important}
+ .health-hero p{font-size:12px!important}
  #saveHealthDay{font-size:14px!important}
 }
 </style>
