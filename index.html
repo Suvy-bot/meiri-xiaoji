@@ -457,14 +457,15 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 </section>
 
 <section class="page" id="page-week">
+<div class="page-story-hero week-story-hero"><div class="page-story-copy"><h2>每周</h2><p>一点一点，也是在前进。</p></div></div>
 <div class="card"><div class="row between"><h2>每周回顾</h2><input type="date" id="weekDate" style="width:auto;max-width:155px"></div><p class="sub" id="weekRange"></p><div class="metric"><div class="label">本周喝水总量</div><div class="num" id="weekWater">0</div><div class="sub">ml</div></div><div class="field"><label for="weekWins">本周完成 / 值得肯定的事</label><textarea id="weekWins" placeholder="这周有什么进步？"></textarea></div><div class="field"><label for="weekHard">遇到的困难 / 想调整的地方</label><textarea id="weekHard" placeholder="有什么可以做得更轻松？"></textarea></div><div class="field"><label for="weekNext">下周重点</label><textarea id="weekNext" placeholder="下周最重要的几件事"></textarea></div><button class="primary" id="saveWeek" style="width:100%">保存本周回顾</button></div>
 <div class="card"><h2>本周待办</h2><div id="weekTasks"></div></div>
 </section>
-<section class="page" id="page-calendar"><div class="card"><div class="calendar-head"><button id="prevMonth">‹ 上个月</button><h2 id="monthTitle" style="margin:0"></h2><button id="nextMonth">下个月 ›</button></div><div class="calendar-grid" id="calendar"></div><p class="sub">点选日期即可查看或编辑当天记录；有记录的日期会显示小点。</p></div><div class="card"><h2 id="calendarDayTitle">所选日期</h2><div id="calendarSummary" class="empty">选择日期查看记录。</div><button class="primary" id="goSelectedDay" style="width:100%">编辑这一天</button></div></section>
+<section class="page" id="page-calendar"><div class="page-story-hero calendar-story-hero"><div class="page-story-copy"><h2>月历</h2><p>把日子，慢慢过成喜欢的样子。</p></div></div><div class="card"><div class="calendar-head"><button id="prevMonth">‹ 上个月</button><h2 id="monthTitle" style="margin:0"></h2><button id="nextMonth">下个月 ›</button></div><div class="calendar-grid" id="calendar"></div><p class="sub">点选日期即可查看或编辑当天记录；有记录的日期会显示小点。</p></div><div class="card"><h2 id="calendarDayTitle">所选日期</h2><div id="calendarSummary" class="empty">选择日期查看记录。</div><button class="primary" id="goSelectedDay" style="width:100%">编辑这一天</button></div></section>
 <section class="page" id="page-history"><div class="card"><h2>搜索旧记录</h2><input id="searchInput" placeholder="搜索日期、随笔、待办或心情"><div class="row" style="margin-top:8px"><input type="date" id="fromDate" aria-label="开始日期"><input type="date" id="toDate" aria-label="结束日期"></div><button id="clearSearch" class="smallbtn" style="margin-top:8px">清除筛选</button></div><div class="card"><h2>最近记录</h2><div id="historyList"></div></div><div class="card"><h2>最近 7 天喝水量</h2><div class="chart" id="waterChart"></div><p class="sub">柱状图按每天的总毫升数显示。</p></div><div class="card"><h2>最近 7 天任务完成</h2><div class="chart" id="taskChart"></div><p class="sub">按每天完成的任务次数汇总；同一任务不同日期的完成分别记录。</p></div></section>
 <section class="page health-page" id="page-period">
-<div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>记录睡眠、体重与身体变化。</p></div></div>
-<div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form">♧ 身体记录</button><button data-health-target="weight-panel">▥ 体重追踪</button><button data-health-target="period-panel">▣ 经期记录</button><button data-health-target="healthHistory">▤ 历史记录</button></div>
+<div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>慢慢记录，好好照顾自己。</p></div></div>
+<div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form"><span class="subnav-icon" aria-hidden="true">🌱</span> 身体记录</button><button data-health-target="weight-panel"><span class="subnav-icon" aria-hidden="true">📊</span> 体重追踪</button><button data-health-target="period-panel"><span class="subnav-icon" aria-hidden="true">🗓️</span> 经期记录</button><button data-health-target="healthHistory"><span class="subnav-icon" aria-hidden="true">📖</span> 历史记录</button></div>
 <div class="card health-form-card" id="health-form">
 <div class="field"><label for="healthDate">记录日期</label><input type="date" id="healthDate"></div>
 <div class="health-grid">
@@ -478,7 +479,7 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 <div class="save-scene-wrap"><img class="save-scene-art save-scene-bunny" src="./save-bunny.png" alt="" aria-hidden="true"><button class="primary" id="saveHealthDay">保存记录</button><img class="save-scene-art save-scene-mushroom" src="./save-mushrooms.png" alt="" aria-hidden="true"></div><div id="healthSaveStatus" class="sub save-status">记录会保存在当前浏览器。</div></div>
 <div class="card"><div class="row between"><h2>体重变化追踪</h2><span class="sub">按记录日期统计</span></div><p class="sub">每天记录体重后，这里会自动绘制最近 30 次体重记录的变化趋势。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近体重</span><strong id="weightTrackLatest">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">与首笔记录差值</span><strong id="weightTrackChange">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">已记录次数</span><strong id="weightTrackCount">0</strong><span class="sub">次</span></div></div><div id="weightTrendChart" role="img" aria-label="最近 30 次体重记录趋势图" style="margin-top:14px;overflow:hidden"></div><div id="weightTrendSummary" class="notice" style="margin-top:10px">保存至少一笔体重记录后，会显示体重变化。</div><div id="weightTrackHistory" style="margin-top:10px"></div></div>
 <div class="card" id="weight-panel"><h2>睡眠与体重趋势</h2><div class="period-stats"><div class="period-stat"><span class="sub">近 7 天平均睡眠</span><strong id="avgSleep">—</strong><span class="sub">小时／晚</span></div><div class="period-stat"><span class="sub">最近体重</span><strong id="latestWeight">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">近 7 天记录</span><strong id="healthLogCount">0</strong><span class="sub">天</span></div></div><div id="healthHistory" class="health-history-anchor" style="margin-top:12px"></div><p class="sub" style="margin-top:10px">趋势仅用于个人观察，不用于诊断。体重短期变化可能受水分、饮食和其他因素影响。</p></div>
-<div class="card" id="period-panel"><div class="row between"><h2>经期记录（可选）</h2><span class="sub">不需要性别设置</span></div><p class="sub">记录经期开始与结束、经量、身体感受及心情。周期预测仅供参考。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近开始</span><strong id="periodLastStart">—</strong><span class="sub">日期</span></div><div class="period-stat"><span class="sub">平均周期</span><strong id="periodAvgCycle">—</strong><span class="sub">天</span></div><div class="period-stat"><span class="sub">平均经期</span><strong id="periodAvgLength">—</strong><span class="sub">天</span></div></div><p id="periodPrediction" class="notice" style="margin-top:12px">记录几次经期后，会显示周期参考。</p></div>
+<div class="card" id="period-panel"><div class="row between"><h2>经期记录</h2></div><p class="sub">记录经期开始与结束、经量、身体感受及心情。周期预测仅供参考。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近开始</span><strong id="periodLastStart">—</strong><span class="sub">日期</span></div><div class="period-stat"><span class="sub">平均周期</span><strong id="periodAvgCycle">—</strong><span class="sub">天</span></div><div class="period-stat"><span class="sub">平均经期</span><strong id="periodAvgLength">—</strong><span class="sub">天</span></div></div><p id="periodPrediction" class="notice" style="margin-top:12px">记录几次经期后，会显示周期参考。</p></div>
 <div class="card"><div class="calendar-head"><button id="periodPrevMonth">‹ 上个月</button><h2 id="periodMonthTitle" style="margin:0"></h2><button id="periodNextMonth">下个月 ›</button></div><div class="calendar-grid" id="periodCalendar"></div><div class="sub" style="margin-top:8px">粉色日期代表已标记的经期；点选日期可编辑当天记录。</div></div>
 <div class="card"><h2 id="periodEditTitle">记录经期</h2><div class="field"><label for="periodDate">记录日期</label><input type="date" id="periodDate"></div><div class="row" style="gap:8px"><button class="primary" id="periodStartBtn" style="flex:1">标记月经开始</button><button id="periodEndBtn" style="flex:1">标记月经结束</button></div><div class="field"><label for="periodFlow">经量</label><select id="periodFlow"><option value="">未记录</option><option value="少">少</option><option value="适中">适中</option><option value="多">多</option></select></div><div class="field"><label>身体感受（可多选）</label><div class="symptom-options" id="periodSymptoms"><label><input type="checkbox" value="腹痛">腹痛</label><label><input type="checkbox" value="头痛">头痛</label><label><input type="checkbox" value="疲倦">疲倦</label><label><input type="checkbox" value="腰酸">腰酸</label><label><input type="checkbox" value="乳房胀痛">乳房胀痛</label><label><input type="checkbox" value="情绪波动">情绪波动</label><label><input type="checkbox" value="无明显不适">无明显不适</label></div></div><div class="field"><label for="periodMood">心情</label><select id="periodMood"><option value="">未记录</option><option>平静</option><option>开心</option><option>低落</option><option>疲惫</option><option>烦躁</option></select></div><div class="field"><label for="periodNote">备注</label><textarea id="periodNote" placeholder="例如：今天需要多休息……"></textarea></div><button class="primary" id="savePeriodDay" style="width:100%">保存这一天</button><button id="clearPeriodDay" style="width:100%;margin-top:8px">清除这一天的记录</button></div>
 <div class="card"><h2>最近经期记录</h2><div id="periodHistory"></div></div>
@@ -756,5 +757,223 @@ load();renderToday();renderTasks();renderWeek();renderCalendar();renderHistory()
  .health-hero h2{font-size:22px!important}
  .health-hero p{font-size:12px!important}
  #saveHealthDay{font-size:14px!important}
+}
+</style>
+
+<style id="storybook-peach-caramel-palette-v27">
+/* Palette A + C: cream peach, dusty rose, oat milk, caramel and cocoa */
+:root{
+ --bg:#f5ede2;--paper:#fff8ed;--ink:#51443b;--muted:#928477;
+ --line:#e5d4c4;--accent:#b87563;--green:#c58b72;
+ --shadow:0 8px 24px rgba(125,86,64,.09)
+}
+html,body{background:#f5ede2!important;color:#51443b}
+body{
+ background:
+ radial-gradient(ellipse at 0 4%,rgba(232,183,160,.28),transparent 36%),
+ radial-gradient(ellipse at 100% 23%,rgba(220,191,157,.25),transparent 38%),
+ #f5ede2!important;
+}
+header h1{color:#51443b!important}
+header .eyebrow{color:#a17e69!important}
+header p{color:#928477!important}
+nav button,nav .nav-link{
+ background:rgba(255,249,239,.97)!important;border-color:#e4d4c3!important;color:#68584b!important
+}
+nav button.active,nav .nav-link.active{
+ background:#b87563!important;border-color:#b87563!important;color:#fff9ef!important
+}
+.card,.card:nth-child(even){
+ background:rgba(255,249,239,.97)!important;
+ border-color:#e6d6c5!important;
+ box-shadow:0 7px 21px rgba(125,86,64,.075)!important
+}
+.card h2{color:#665044!important}
+.card h2:before{background:#d6a18b!important}
+button{border-color:#e4d4c3!important;color:#68584b}
+button.primary,.primary{
+ background:linear-gradient(135deg,#c98270 0%,#a96050 100%)!important;
+ border-color:#a96050!important;color:#fff8ed!important;
+ box-shadow:0 5px 13px rgba(169,96,80,.19)!important
+}
+input,textarea,select{
+ background:rgba(255,253,247,.98)!important;border-color:#e5d9c9!important;color:#51443b!important
+}
+input:focus,textarea:focus,select:focus{
+ border-color:#d39a84!important;box-shadow:0 0 0 3px rgba(211,154,132,.19)!important
+}
+.metric,.period-stat{
+ background:linear-gradient(135deg,#f7eddf,#f3e4d1)!important;border-color:#e7d8c6!important
+}
+.encouragement{
+ background:linear-gradient(120deg,#fff6e9,#f6e5d8)!important;border-color:#e2c6b4!important
+}
+.health-subnav button{
+ background:rgba(255,249,239,.97)!important;border-color:#e4d4c3!important;color:#68584b!important
+}
+.health-subnav button.active{
+ background:#b87563!important;color:#fff8ed!important;border-color:#b87563!important
+}
+.health-hero{
+ background-color:#f7ead9!important;
+ background-image:linear-gradient(90deg,rgba(255,247,233,.97) 0%,rgba(255,247,233,.78) 34%,rgba(255,247,233,.12) 57%,rgba(255,247,233,0) 100%),url("./health-woodland-scene.png")!important
+}
+.save-scene-wrap{
+ background-color:#f7ead9!important;
+ background-image:linear-gradient(0deg,rgba(250,237,219,.12),rgba(255,248,235,.12)),url("./save-meadow-scene.png")!important;
+ border:1px solid rgba(224,199,177,.42)!important
+}
+#saveHealthDay{
+ background:linear-gradient(135deg,#c98270 0%,#a96050 100%)!important;
+ border-color:#a96050!important;
+ box-shadow:0 4px 11px rgba(169,96,80,.2),inset 0 1px 0 rgba(255,255,255,.22)!important
+}
+.save-status{color:#9a8473!important}
+@media(prefers-color-scheme:dark){
+ body{background:#f5ede2!important;color:#51443b!important}
+}
+</style>
+
+<style id="forest-storybook-unified-v28">
+:root{
+ --bg:#f5f0e4;--paper:#fffaf0;--ink:#51443b;--muted:#8e8173;
+ --line:#e5d8c6;--accent:#bd7865;--green:#8ea58a;--rose:#d99582;
+ --shadow:0 8px 24px rgba(91,78,58,.09)
+}
+html,body{background:#f5f0e4!important;color:#51443b}
+body{
+ background:
+  radial-gradient(ellipse at 0 5%,rgba(236,202,176,.24),transparent 34%),
+  radial-gradient(ellipse at 100% 20%,rgba(199,218,188,.22),transparent 37%),
+  #f5f0e4!important;
+}
+header{
+ max-width:1440px!important;width:calc(100% - 28px)!important;
+ min-height:210px!important;margin:10px auto 12px!important;
+ padding:27px 28px 22px!important;
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ border:1px solid rgba(255,255,255,.82)!important;border-radius:24px!important;
+ overflow:hidden;position:relative;isolation:isolate;
+ background-color:#f8f0df!important;
+ background-image:linear-gradient(90deg,rgba(255,248,234,.92) 0%,rgba(255,248,234,.70) 35%,rgba(255,248,234,.08) 60%,rgba(255,248,234,0) 100%),url("./health-woodland-scene.png")!important;
+ background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+ box-shadow:0 7px 22px rgba(85,97,73,.09)!important;
+}
+header .eyebrow{font-size:11px!important;letter-spacing:2.1px!important;color:#8f806f!important;font-weight:700}
+header h1{font-size:clamp(28px,4vw,38px)!important;color:#51443b!important;margin:5px 0 3px!important}
+header p{font-size:14px!important;color:#847668!important;margin:0!important}
+nav{max-width:1440px!important;width:calc(100% - 28px)!important;padding:3px 0 15px!important;gap:8px!important}
+nav button,nav .nav-link{
+ background:rgba(255,250,241,.97)!important;border:1px solid #e5d9c7!important;
+ color:#66564a!important;box-shadow:0 3px 9px rgba(91,78,58,.045)!important
+}
+nav button.active,nav .nav-link.active{
+ background:#bd7865!important;border-color:#bd7865!important;color:#fffaf1!important
+}
+main{max-width:1440px!important;padding:0 14px 42px!important}
+.card,.card:nth-child(even){
+ background:rgba(255,250,241,.96)!important;border:1px solid #e5d9c7!important;
+ border-radius:22px!important;box-shadow:0 7px 20px rgba(91,78,58,.065)!important
+}
+.card h2{color:#5a4a3e!important}
+.card h2:before{background:#d9a08b!important}
+button{border-color:#e5d9c7!important;color:#66564a}
+button.primary,.primary{
+ background:linear-gradient(135deg,#cb8b75,#ad6857)!important;
+ border-color:#ad6857!important;color:#fffaf1!important;
+ box-shadow:0 5px 13px rgba(164,100,80,.17)!important
+}
+input,textarea,select{background:#fffdf7!important;border-color:#e4d9c8!important;color:#51443b!important}
+input:focus,textarea:focus,select:focus{border-color:#d7a08a!important;box-shadow:0 0 0 3px rgba(215,160,138,.18)!important}
+.metric,.period-stat{background:linear-gradient(135deg,#f8efdf,#f3e6d4)!important;border-color:#e6d9c7!important}
+.encouragement{background:linear-gradient(115deg,#fff7e9,#f6f1e4)!important;border-color:#e1d4c2!important}
+
+/* Home encouragement: replace the sticker bunny with a watercolor scene and protect the text area. */
+.goal-card{position:relative!important;isolation:isolate!important;overflow:hidden!important;background:linear-gradient(110deg,#fff8eb,#f7f1e5)!important;border-style:solid!important}
+.goal-card::before{
+ content:"";position:absolute;z-index:0;left:0;top:0;bottom:0;width:150px;
+ background-image:linear-gradient(90deg,rgba(255,248,235,0) 72%,rgba(255,248,235,.96) 100%),url("./bunny-corner.png");
+ background-size:cover,auto 100%;background-position:center,left center;background-repeat:no-repeat;
+ opacity:.98;pointer-events:none
+}
+.goal-card .animal{visibility:hidden!important;flex:0 0 105px!important;width:105px!important}
+.goal-card>div:not(.animal){position:relative;z-index:1}
+.goal-card .quote{color:#57493e!important}
+.goal-card .who{color:#928272!important}
+
+/* A watercolor water bottle scene occupies the empty side of the daily water summary. */
+#page-today>.card:nth-of-type(2) .metric{
+ position:relative!important;isolation:isolate!important;overflow:hidden!important;
+ min-height:112px!important;padding-right:38%!important;
+ background-color:#f6eedc!important;
+ background-image:linear-gradient(90deg,rgba(248,241,224,1) 0%,rgba(248,241,224,.97) 44%,rgba(248,241,224,.45) 68%,rgba(248,241,224,.08) 100%),url("./water-garden-art.png")!important;
+ background-repeat:no-repeat!important;background-size:100% 100%,auto 100%!important;background-position:center,right center!important;
+}
+#page-today>.card:nth-of-type(2) .metric>*{position:relative;z-index:1;max-width:64%}
+#page-today>.card:nth-of-type(2) .metric .num{font-size:clamp(27px,4vw,36px)!important}
+.water-buttons button{border-radius:18px!important}
+.water-buttons button.primary{background:linear-gradient(135deg,#f4d8c8,#efc6b2)!important;color:#6c4d40!important;border-color:#e8c5b0!important;box-shadow:0 4px 12px rgba(181,125,99,.12)!important}
+.water-progress{background:#e9e8d9!important}
+.water-progress span{background:linear-gradient(90deg,#9bb29a,#78977a)!important}
+#undoWater{border-radius:999px!important}
+
+/* Shared storybook titles for weekly and calendar pages. */
+.page-story-hero{
+ min-height:172px;position:relative;isolation:isolate;overflow:hidden;
+ display:flex;align-items:flex-start;justify-content:flex-start;
+ padding:26px 25px;margin:0 0 13px;border-radius:23px;
+ border:1px solid rgba(255,255,255,.82);box-shadow:0 7px 20px rgba(85,97,73,.08);
+ background-color:#f8f0df;
+ background-image:linear-gradient(90deg,rgba(255,248,234,.95) 0%,rgba(255,248,234,.72) 35%,rgba(255,248,234,.08) 60%,rgba(255,248,234,0) 100%),url("./health-woodland-scene.png");
+ background-size:cover;background-position:center;background-repeat:no-repeat
+}
+.page-story-copy{max-width:48%;position:relative;z-index:1}
+.page-story-copy h2{font-size:28px;margin:0 0 8px;color:#51443b}
+.page-story-copy p{font-size:14px;line-height:1.65;margin:0;color:#847668}
+.health-hero{
+ background-color:#f8f0df!important;
+ background-image:linear-gradient(90deg,rgba(255,248,234,.94) 0%,rgba(255,248,234,.72) 35%,rgba(255,248,234,.08) 60%,rgba(255,248,234,0) 100%),url("./health-woodland-scene.png")!important;
+ background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.health-hero-copy{max-width:48%!important}
+.health-hero h2{color:#51443b!important}
+.health-hero p{color:#847668!important}
+.health-subnav button{background:#fffaf1!important;color:#66564a!important;border-color:#e5d9c7!important}
+.health-subnav button.active{background:#bd7865!important;color:#fffaf1!important;border-color:#bd7865!important}
+.subnav-icon{display:inline-block;font-size:15px;line-height:1;vertical-align:-1px;margin-right:2px}
+#period-panel .row.between>span.sub{display:none!important}
+@media(min-width:760px){
+ header{min-height:240px!important;padding-left:36px!important}
+ .page-story-hero{min-height:210px;padding:32px}
+}
+@media(max-width:600px){
+ header{width:calc(100% - 24px)!important;min-height:190px!important;padding:23px 18px!important;margin:8px auto 10px!important;border-radius:21px!important;background-position:center right!important}
+ header h1{font-size:30px!important}
+ header p{font-size:13px!important}
+ nav{width:calc(100% - 24px)!important;gap:6px!important;padding-bottom:13px!important}
+ nav button,nav .nav-link{padding:9px 13px!important;min-height:42px!important}
+ main{padding:0 12px 30px!important}
+ .goal-card{gap:7px!important;padding:15px!important}
+ .goal-card::before{width:118px;background-position:center,left center}
+ .goal-card .animal{flex-basis:88px!important;width:88px!important}
+ .goal-card .quote{font-size:16px!important;line-height:1.6!important}
+ #page-today>.card:nth-of-type(2) .metric{min-height:104px!important;padding-right:36%!important;background-size:100% 100%,auto 100%!important}
+ #page-today>.card:nth-of-type(2) .metric>*{max-width:66%}
+ .page-story-hero{min-height:158px;padding:21px 18px;border-radius:21px;margin-bottom:12px;background-position:center right}
+ .page-story-copy{max-width:55%}
+ .page-story-copy h2{font-size:25px}
+ .page-story-copy p{font-size:13px;line-height:1.55}
+ .health-hero{min-height:174px!important;padding:21px 18px!important;background-position:center right!important}
+ .health-hero-copy{max-width:55%!important}
+ .health-hero h2{font-size:24px!important}
+ .health-hero p{font-size:13px!important;line-height:1.6!important}
+ .health-subnav button{font-size:12px!important;padding:8px 11px!important}
+}
+@media(max-width:380px){
+ .goal-card::before{width:102px}
+ .goal-card .animal{flex-basis:74px!important;width:74px!important}
+ .goal-card .quote{font-size:15px!important}
+ #page-today>.card:nth-of-type(2) .metric{padding-right:33%!important}
+ .page-story-copy{max-width:58%}
 }
 </style>

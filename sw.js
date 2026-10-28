@@ -1,5 +1,5 @@
-const CACHE_NAME='meiri-xiaoji-v26-unified-watercolor';
-const APP_FILES = ['./', './index.html', './customers.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './woodland-scene.svg', './meadow-watercolor.webp', './bunny-corner.png', './mushroom-corner.png', './save-bunny.png', './save-mushrooms.png', './health-woodland-scene.png', './save-meadow-scene.png'];
+const CACHE_NAME='meiri-xiaoji-v28-forest-storybook';
+const APP_FILES = ['./', './index.html', './customers.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './woodland-scene.svg', './meadow-watercolor.webp', './bunny-corner.png', './mushroom-corner.png', './save-bunny.png', './save-mushrooms.png', './health-woodland-scene.png', './save-meadow-scene.png', './water-garden-art.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', event => {
