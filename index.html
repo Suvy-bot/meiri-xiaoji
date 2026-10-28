@@ -355,37 +355,86 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+
+/* Final storybook redesign: no repeated landscape banners or decorative corner stickers */
+:root{--bg:#f5f0e4;--paper:#fffaf0;--ink:#45483d;--muted:#858574;--line:#e4dbc8;--accent:#6b8567;--green:#8fa98a;--shadow:0 8px 24px rgba(83,92,68,.09)}
+html,body{background:#f5f0e4}
+body{background:radial-gradient(ellipse at 0 4%,rgba(240,213,187,.24),transparent 34%),radial-gradient(ellipse at 100% 22%,rgba(197,215,184,.3),transparent 35%),#f5f0e4;background-attachment:fixed}
+header,nav,main{max-width:1440px}
+header{padding:24px 20px 12px}
+header .eyebrow{font-size:11px;letter-spacing:2.5px;color:#8c8d77;font-weight:750}
+header h1{font-size:clamp(28px,3vw,38px);color:#45483d}
+header p{font-size:14px;color:#858574}
+.nature-scene{display:none!important}
+nav{gap:9px;padding:5px 20px 17px}
+nav button,nav .nav-link{min-height:44px;padding:10px 16px;font-size:14px;border-radius:999px;background:rgba(255,252,244,.96);border:1px solid #e2dac8;box-shadow:0 3px 9px rgba(82,95,72,.05)}
+nav button.active{background:#657f62;border-color:#657f62}
+main{max-width:1440px;padding:0 20px 48px}
+.page{position:relative;min-width:0}
+.page:not(#page-today)::before,.page:not(#page-today)::after{display:none!important;content:none!important}
+.card,.card:nth-child(even){position:relative;isolation:isolate;overflow:hidden;background:rgba(255,251,242,.96)!important;border:1px solid rgba(224,216,196,.96)!important;border-radius:23px!important;padding:19px!important;margin-bottom:15px!important;box-shadow:0 7px 21px rgba(87,91,65,.07)!important;backdrop-filter:none!important}
+.card::after{display:none!important;content:none!important;background:none!important}
+.card h2{font-size:18px;color:#4d5947;margin-bottom:13px;letter-spacing:.15px}
+.card h2:before{content:"";display:inline-block;width:7px;height:18px;border-radius:8px;background:#9caf91;margin-right:10px;vertical-align:-3px;box-shadow:none}
+.card h2:after{display:none!important;content:none!important}
+button{border-color:#dfddcc;background:rgba(255,253,247,.98);border-radius:15px;box-shadow:0 2px 7px rgba(95,100,75,.035)}
+button.primary,.primary{background:linear-gradient(135deg,#829d7b,#5e7b5b)!important;border-color:#779171!important;color:#fffdf5!important;box-shadow:0 5px 13px rgba(89,122,82,.16)!important}
+input,textarea,select{background:rgba(255,254,248,.98);border-color:#e0ddcb;border-radius:14px}
+input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3px #dce8d580}
+.metric,.period-stat{background:linear-gradient(135deg,rgba(242,241,226,.98),rgba(249,241,222,.98))!important;border:1px solid #e6e2d0!important;border-radius:18px!important}
+.encouragement{background:linear-gradient(120deg,rgba(255,252,241,.98),rgba(238,243,229,.98))!important;border:1px dashed #d1d9c7!important}
+.health-page{max-width:100%;display:none}
+.health-page.active{display:block}
+.health-hero{min-height:220px;display:flex;align-items:flex-start;position:relative;isolation:isolate;overflow:hidden;border-radius:25px;margin:0 0 12px;border:1px solid rgba(255,255,255,.85);box-shadow:0 8px 22px rgba(84,103,76,.10);background-color:#f3eddb;background-image:linear-gradient(90deg,rgba(255,250,235,.96) 0%,rgba(255,250,235,.84) 47%,rgba(255,250,235,.06) 100%),url('./bunny-corner.png');background-size:cover,auto 100%;background-position:center,right center;background-repeat:no-repeat;padding:28px}
+.health-hero-copy{position:relative;z-index:1;max-width:520px}
+.health-hero .health-leaf{font-size:25px;line-height:1;color:#819a77;display:inline-block;margin-right:8px}
+.health-hero h2{display:inline-block;margin:0 0 14px;font-size:clamp(23px,2.5vw,31px);color:#41463b}
+.health-hero p{margin:0;color:#6f7465;font-size:15px;line-height:1.8}
+.health-subnav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 0 14px;margin:0 0 2px}
+.health-subnav::-webkit-scrollbar{display:none}
+.health-subnav button{flex:0 0 auto;border-radius:999px;min-height:43px;padding:9px 15px;background:rgba(255,252,244,.96);border:1px solid #e5ddca;color:#4e5146}
+.health-subnav button.active{background:#6b8567;color:#fffdf5;border-color:#6b8567}
+.health-form-card{padding-bottom:132px!important}
+.health-form-card::after{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:125px!important;opacity:.94!important;background-image:linear-gradient(0deg,rgba(255,250,240,.03),rgba(255,250,240,0)),url('./mushroom-corner.png')!important;background-repeat:no-repeat!important;background-size:cover!important;background-position:center 65%!important;pointer-events:none!important;z-index:0!important}
+.health-form-card>*{position:relative;z-index:1}
+.health-grid{gap:0 14px}
+#health-form .field{margin:12px 0}
+#health-form input,#health-form select{min-height:49px}
+#health-form textarea{min-height:88px}
+#saveHealthDay{min-height:52px;border-radius:999px!important}
+#weight-panel,#period-panel,#health-history-panel{scroll-margin-top:14px}
+#healthHistory .health-history-row{border-bottom-color:#e8e1d2}
+@media(min-width:760px){
+ .health-page.active{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 18px;align-items:start}
+ .health-hero,.health-subnav{grid-column:1/-1}
+ #health-form{grid-column:1;grid-row:3 / span 3}
+ #weight-panel{grid-column:2;grid-row:3}
+ #period-panel{grid-column:2;grid-row:4}
+ #page-period .card{min-width:0}
+}
+@media(max-width:600px){
+ header{padding:20px 16px 10px}header h1{font-size:30px}
+ nav{padding:4px 14px 14px;gap:7px}
+ nav button,nav .nav-link{font-size:13px;min-height:43px;padding:9px 14px}
+ main{padding:0 14px 32px}
+ .card,.card:nth-child(even){padding:16px!important;border-radius:21px!important;margin-bottom:13px!important}
+ .health-hero{min-height:175px;padding:22px 18px;background-position:center,right center;border-radius:22px}
+ .health-hero-copy{max-width:68%}.health-hero p{font-size:13px;line-height:1.7}
+ .health-subnav{gap:6px}.health-subnav button{font-size:12px;padding:8px 12px;min-height:41px}
+ .health-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
+ .health-form-card{padding-bottom:118px!important}
+ .health-form-card::after{height:112px!important;background-size:auto 112px!important;background-position:center bottom!important}
+ .goal-card{gap:13px;padding:16px}.goal-card .animal{width:70px;height:70px;flex-basis:70px}.goal-card .quote{font-size:17px;line-height:1.65}
+ .water-buttons button{min-height:76px;border-radius:17px}.mood{min-height:83px}
+}
+@media(max-width:390px){.health-grid{grid-template-columns:1fr}.health-hero-copy{max-width:74%}.health-hero{min-height:165px;padding:18px 15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
 <header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p>
-<div class="nature-scene" aria-hidden="true"><svg viewBox="0 0 640 170" role="presentation" xmlns="http://www.w3.org/2000/svg">
-<defs>
- <linearGradient id="skyWash" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff6e5"/><stop offset="1" stop-color="#e9eee0"/></linearGradient>
- <linearGradient id="hillWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5dfc5"/><stop offset="1" stop-color="#9eb58f"/></linearGradient>
- <linearGradient id="mushroomCap" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e7a18b"/><stop offset="1" stop-color="#c97864"/></linearGradient>
-</defs>
-<rect width="640" height="170" rx="24" fill="url(#skyWash)"/>
-<circle cx="522" cy="35" r="21" fill="#e8c987" opacity=".65"/>
-<g fill="none" stroke="#8fa18a" stroke-width="2" stroke-linecap="round" opacity=".65"><path d="M174 43q8-7 16 0q8-7 16 0"/><path d="M410 54q6-5 12 0q6-5 12 0"/><path d="M270 31q5-4 10 0q5-4 10 0"/></g>
-<path d="M0 96Q70 34 151 77T305 76T472 68T640 83V170H0Z" fill="#dce5cf"/>
-<path d="M0 117Q90 71 190 109T385 104T640 100V170H0Z" fill="url(#hillWash)" opacity=".92"/>
-<path d="M0 143Q98 106 218 137T435 131T640 134V170H0Z" fill="#b6c9a7"/>
-<!-- distant watercolor shrubs -->
-<g fill="#9fb58f" opacity=".75"><circle cx="26" cy="116" r="10"/><circle cx="40" cy="111" r="13"/><circle cx="56" cy="119" r="9"/><circle cx="588" cy="111" r="13"/><circle cx="607" cy="116" r="10"/><circle cx="625" cy="110" r="12"/></g>
-<!-- trees -->
-<g stroke="#71876a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M75 127V57" fill="none"/><path d="M75 77Q42 70 46 43Q70 46 75 77Z" fill="#a5bb91"/><path d="M76 91Q106 79 103 53Q82 59 76 91Z" fill="#9ab38a"/><path d="M75 105Q48 100 41 81Q62 80 75 105Z" fill="#bed0a9"/><path d="M568 125V49" fill="none"/><path d="M568 68Q536 60 541 34Q563 39 568 68Z" fill="#a5bb91"/><path d="M568 85Q598 72 598 48Q576 53 568 85Z" fill="#9ab38a"/><path d="M568 99Q541 91 535 73Q558 72 568 99Z" fill="#bed0a9"/></g>
-<!-- flowers -->
-<g stroke="#c99a75" stroke-width="1"><g transform="translate(139 139)"><circle cy="-4" r="4" fill="#f0c982"/><circle cx="4" cy="0" r="4" fill="#f3d8a3"/><circle cy="4" r="4" fill="#f0c982"/><circle cx="-4" cy="0" r="4" fill="#f3d8a3"/><circle r="2" fill="#b98b61"/></g><g transform="translate(475 136)"><circle cy="-4" r="4" fill="#f0c982"/><circle cx="4" cy="0" r="4" fill="#f3d8a3"/><circle cy="4" r="4" fill="#f0c982"/><circle cx="-4" cy="0" r="4" fill="#f3d8a3"/><circle r="2" fill="#b98b61"/></g></g>
-<!-- spotted mushrooms -->
-<g stroke="#a36f5d" stroke-width="1.5" stroke-linejoin="round"><path d="M153 143L156 127Q162 122 168 127L171 143Z" fill="#f6e9d3"/><path d="M148 129Q161 108 175 129Z" fill="url(#mushroomCap)"/><g fill="#fff4dc" stroke="none"><circle cx="157" cy="124" r="2"/><circle cx="166" cy="121" r="2"/><circle cx="170" cy="128" r="1.5"/></g><path d="M488 145L491 133Q496 128 502 133L505 145Z" fill="#f6e9d3"/><path d="M485 135Q497 116 510 135Z" fill="url(#mushroomCap)"/><g fill="#fff4dc" stroke="none"><circle cx="493" cy="131" r="2"/><circle cx="501" cy="129" r="2"/></g></g>
-<!-- little rabbit -->
-<g stroke="#a4a995" stroke-width="1.5" stroke-linejoin="round"><ellipse cx="318" cy="137" rx="18" ry="14" fill="#fff8ed"/><ellipse cx="307" cy="105" rx="6" ry="21" transform="rotate(-12 307 105)" fill="#fff8ed"/><ellipse cx="324" cy="104" rx="6" ry="22" transform="rotate(7 324 104)" fill="#fff8ed"/><ellipse cx="307" cy="106" rx="2.5" ry="13" transform="rotate(-12 307 106)" fill="#e8c4c1" stroke="none"/><ellipse cx="324" cy="105" rx="2.5" ry="13" transform="rotate(7 324 105)" fill="#e8c4c1" stroke="none"/><circle cx="312" cy="135" r="1.8" fill="#59564c" stroke="none"/><circle cx="325" cy="135" r="1.8" fill="#59564c" stroke="none"/><ellipse cx="319" cy="140" rx="2.7" ry="2" fill="#d59a98" stroke="none"/></g>
-<!-- tiny hedgehog friend -->
-<g stroke="#8d8d72" stroke-width="1.3" stroke-linejoin="round"><ellipse cx="356" cy="143" rx="12" ry="9" fill="#f5ead6"/><path d="M346 136l-2-8 7 5 3-8 4 8 6-5-1 9" fill="#b5a78a"/><circle cx="359" cy="141" r="1.5" fill="#5a554a" stroke="none"/><circle cx="366" cy="144" r="1.3" fill="#c78d81" stroke="none"/></g>
-<!-- butterflies -->
-<g stroke="#c98569" stroke-width="1.2" stroke-linejoin="round"><g transform="translate(239 87) rotate(-15)"><path d="M0 0Q-16-19-14-3Q-10 5 0 2Q9-17 15-4Q14 7 0 2Z" fill="#f4c39b"/><path d="M0 0V12" stroke="#8d8a6e"/><path d="M0 1l-4-7M0 1l4-7" fill="none"/></g><g transform="translate(439 112) rotate(18) scale(.7)"><path d="M0 0Q-16-19-14-3Q-10 5 0 2Q9-17 15-4Q14 7 0 2Z" fill="#f4c39b"/><path d="M0 0V12" stroke="#8d8a6e"/><path d="M0 1l-4-7M0 1l4-7" fill="none"/></g></g>
-</svg></div></header>
+</header>
 <nav id="nav">
 <button class="active" data-page="today">今日</button><button data-page="period" id="periodNav">健康记录</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>
 </nav>
@@ -413,8 +462,10 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 </section>
 <section class="page" id="page-calendar"><div class="card"><div class="calendar-head"><button id="prevMonth">‹ 上个月</button><h2 id="monthTitle" style="margin:0"></h2><button id="nextMonth">下个月 ›</button></div><div class="calendar-grid" id="calendar"></div><p class="sub">点选日期即可查看或编辑当天记录；有记录的日期会显示小点。</p></div><div class="card"><h2 id="calendarDayTitle">所选日期</h2><div id="calendarSummary" class="empty">选择日期查看记录。</div><button class="primary" id="goSelectedDay" style="width:100%">编辑这一天</button></div></section>
 <section class="page" id="page-history"><div class="card"><h2>搜索旧记录</h2><input id="searchInput" placeholder="搜索日期、随笔、待办或心情"><div class="row" style="margin-top:8px"><input type="date" id="fromDate" aria-label="开始日期"><input type="date" id="toDate" aria-label="结束日期"></div><button id="clearSearch" class="smallbtn" style="margin-top:8px">清除筛选</button></div><div class="card"><h2>最近记录</h2><div id="historyList"></div></div><div class="card"><h2>最近 7 天喝水量</h2><div class="chart" id="waterChart"></div><p class="sub">柱状图按每天的总毫升数显示。</p></div><div class="card"><h2>最近 7 天任务完成</h2><div class="chart" id="taskChart"></div><p class="sub">按每天完成的任务次数汇总；同一任务不同日期的完成分别记录。</p></div></section>
-<section class="page" id="page-period">
-<div class="card"><div class="row between"><h2>健康记录</h2><span class="sub">只在本机保存</span></div><p class="sub">记录身体变化、睡眠、体重与不适；经期记录是可选的一部分，不需要选择性别。</p>
+<section class="page health-page" id="page-period">
+<div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>记录身体变化、睡眠、体重与不适；<br>经期记录是可选的一部分，不需要选择性别。</p></div></div>
+<div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form">♧ 身体记录</button><button data-health-target="weight-panel">▥ 体重追踪</button><button data-health-target="period-panel">▣ 经期记录</button><button data-health-target="healthHistory">▤ 历史记录</button></div>
+<div class="card health-form-card" id="health-form"><div class="row between"><h2>记录身体状态</h2><span class="sub">只在本机保存</span></div><p class="sub">记录身体变化、睡眠、体重与不适；经期记录是可选的一部分，不需要选择性别。</p>
 <div class="field"><label for="healthDate">记录日期</label><input type="date" id="healthDate"></div>
 <div class="health-grid">
 <div class="field"><label for="sleepHours">睡眠时长（小时）</label><input type="number" id="sleepHours" min="0" max="24" step="0.25" placeholder="例如 7.5"></div>
@@ -426,11 +477,11 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 <div class="field"><label for="healthNote">睡眠／身体备注</label><textarea id="healthNote" placeholder="例如：睡前喝了咖啡、夜里醒了两次……"></textarea></div>
 <button class="primary" id="saveHealthDay" style="width:100%">保存身体记录</button><div id="healthSaveStatus" class="sub" style="margin-top:8px">记录会保存在当前浏览器。</div></div>
 <div class="card"><div class="row between"><h2>体重变化追踪</h2><span class="sub">按记录日期统计</span></div><p class="sub">每天记录体重后，这里会自动绘制最近 30 次体重记录的变化趋势。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近体重</span><strong id="weightTrackLatest">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">与首笔记录差值</span><strong id="weightTrackChange">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">已记录次数</span><strong id="weightTrackCount">0</strong><span class="sub">次</span></div></div><div id="weightTrendChart" role="img" aria-label="最近 30 次体重记录趋势图" style="margin-top:14px;overflow:hidden"></div><div id="weightTrendSummary" class="notice" style="margin-top:10px">保存至少一笔体重记录后，会显示体重变化。</div><div id="weightTrackHistory" style="margin-top:10px"></div></div>
-<div class="card"><h2>睡眠与体重趋势</h2><div class="period-stats"><div class="period-stat"><span class="sub">近 7 天平均睡眠</span><strong id="avgSleep">—</strong><span class="sub">小时／晚</span></div><div class="period-stat"><span class="sub">最近体重</span><strong id="latestWeight">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">近 7 天记录</span><strong id="healthLogCount">0</strong><span class="sub">天</span></div></div><div id="healthHistory" style="margin-top:12px"></div><p class="sub" style="margin-top:10px">趋势仅用于个人观察，不用于诊断。体重短期变化可能受水分、饮食和其他因素影响。</p></div>
-<div class="card"><div class="row between"><h2>经期记录（可选）</h2><span class="sub">不需要性别设置</span></div><p class="sub">记录经期开始与结束、经量、身体感受及心情。周期预测仅供参考。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近开始</span><strong id="periodLastStart">—</strong><span class="sub">日期</span></div><div class="period-stat"><span class="sub">平均周期</span><strong id="periodAvgCycle">—</strong><span class="sub">天</span></div><div class="period-stat"><span class="sub">平均经期</span><strong id="periodAvgLength">—</strong><span class="sub">天</span></div></div><p id="periodPrediction" class="notice" style="margin-top:12px">记录几次经期后，会显示周期参考。</p></div>
+<div class="card" id="weight-panel"><h2>睡眠与体重趋势</h2><div class="period-stats"><div class="period-stat"><span class="sub">近 7 天平均睡眠</span><strong id="avgSleep">—</strong><span class="sub">小时／晚</span></div><div class="period-stat"><span class="sub">最近体重</span><strong id="latestWeight">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">近 7 天记录</span><strong id="healthLogCount">0</strong><span class="sub">天</span></div></div><div id="healthHistory" class="health-history-anchor" style="margin-top:12px"></div><p class="sub" style="margin-top:10px">趋势仅用于个人观察，不用于诊断。体重短期变化可能受水分、饮食和其他因素影响。</p></div>
+<div class="card" id="period-panel"><div class="row between"><h2>经期记录（可选）</h2><span class="sub">不需要性别设置</span></div><p class="sub">记录经期开始与结束、经量、身体感受及心情。周期预测仅供参考。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近开始</span><strong id="periodLastStart">—</strong><span class="sub">日期</span></div><div class="period-stat"><span class="sub">平均周期</span><strong id="periodAvgCycle">—</strong><span class="sub">天</span></div><div class="period-stat"><span class="sub">平均经期</span><strong id="periodAvgLength">—</strong><span class="sub">天</span></div></div><p id="periodPrediction" class="notice" style="margin-top:12px">记录几次经期后，会显示周期参考。</p></div>
 <div class="card"><div class="calendar-head"><button id="periodPrevMonth">‹ 上个月</button><h2 id="periodMonthTitle" style="margin:0"></h2><button id="periodNextMonth">下个月 ›</button></div><div class="calendar-grid" id="periodCalendar"></div><div class="sub" style="margin-top:8px">粉色日期代表已标记的经期；点选日期可编辑当天记录。</div></div>
 <div class="card"><h2 id="periodEditTitle">记录经期</h2><div class="field"><label for="periodDate">记录日期</label><input type="date" id="periodDate"></div><div class="row" style="gap:8px"><button class="primary" id="periodStartBtn" style="flex:1">标记月经开始</button><button id="periodEndBtn" style="flex:1">标记月经结束</button></div><div class="field"><label for="periodFlow">经量</label><select id="periodFlow"><option value="">未记录</option><option value="少">少</option><option value="适中">适中</option><option value="多">多</option></select></div><div class="field"><label>身体感受（可多选）</label><div class="symptom-options" id="periodSymptoms"><label><input type="checkbox" value="腹痛">腹痛</label><label><input type="checkbox" value="头痛">头痛</label><label><input type="checkbox" value="疲倦">疲倦</label><label><input type="checkbox" value="腰酸">腰酸</label><label><input type="checkbox" value="乳房胀痛">乳房胀痛</label><label><input type="checkbox" value="情绪波动">情绪波动</label><label><input type="checkbox" value="无明显不适">无明显不适</label></div></div><div class="field"><label for="periodMood">心情</label><select id="periodMood"><option value="">未记录</option><option>平静</option><option>开心</option><option>低落</option><option>疲惫</option><option>烦躁</option></select></div><div class="field"><label for="periodNote">备注</label><textarea id="periodNote" placeholder="例如：今天需要多休息……"></textarea></div><button class="primary" id="savePeriodDay" style="width:100%">保存这一天</button><button id="clearPeriodDay" style="width:100%;margin-top:8px">清除这一天的记录</button></div>
-<div class="card"><h2>最近记录</h2><div id="periodHistory"></div></div>
+<div class="card"><h2>最近经期记录</h2><div id="periodHistory"></div></div>
 </section>
 <section class="page" id="page-backup"><div class="card"><h2>数据备份</h2><p>建议定期导出备份，尤其是换手机或清理浏览器前。</p><button class="primary" id="exportBtn" style="width:100%">导出全部数据（JSON）</button><div class="field"><label for="importFile">从备份文件恢复</label><input id="importFile" type="file" accept=".json,application/json"></div><button id="importBtn" style="width:100%">导入并合并备份</button><p class="notice" style="margin-top:12px">导入会把备份中的记录合并到当前数据中；相同日期的记录以备份文件中的内容为准。请只导入自己信任的文件。</p></div><div class="card"><h2>本机储存说明</h2><p class="sub">当前版本使用浏览器的本地储存。通常刷新后记录仍会保留，但清除浏览器网站数据、换浏览器或更换手机可能导致资料消失。请保留导出的 JSON 备份。</p><button id="resetBtn" class="delete" style="width:100%">清空本机所有记录</button></div></section>
 <div class="footer">每日小记 · 慢慢记录，认真生活</div>
@@ -614,6 +665,7 @@ let lastObservedDate=todayISO();
 function refreshForDateChange(){const now=todayISO();processTomorrow(now);if(now!==lastObservedDate){if(selected===lastObservedDate)selected=now;lastObservedDate=now;renderToday();renderTasks();renderWeek();renderCalendar();renderHistory();renderProfile();renderPeriod();renderHealth();}else if(selected===now){renderTodayTasks();renderProfile();}}
 window.addEventListener('focus',refreshForDateChange);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshForDateChange();});
+document.querySelectorAll('[data-health-target]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-health-target]').forEach(b=>b.classList.toggle('active',b===btn));const target=$(btn.dataset.healthTarget);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}));
 load();renderToday();renderTasks();renderWeek();renderCalendar();renderHistory();renderProfile();renderPeriod();renderHealth();showWelcome();if('serviceWorker'in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('离线缓存注册失败',err)));
 })();
 </script>
