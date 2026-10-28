@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f0e5">
-<link rel="manifest" href="./manifest.webmanifest">
-<meta name="description" content="温柔记录每天的生活、待办、心情与喝水，也照顾好自己。"><title>每日小记｜森林水彩手帐</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="description" content="温柔记录每天的生活、待办、心情与喝水，也照顾好自己。"><title>每日小记｜日系手帐</title>
 <style>
 :root{--bg:#f8efe4;--paper:#fffaf3;--ink:#51443d;--muted:#928176;--line:#ead9c7;--accent:#b97f67;--accent2:#e5c5ae;--green:#899a7a;--rose:#d9a7a3;--shadow:0 8px 24px #73533a12}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.5}
@@ -70,33 +70,74 @@ input,textarea,select{border-color:#dfe0d2;background:#fffef9;outline-color:#93a
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
 
-/* Whimsical woodland details: tiny mushrooms, butterflies, and wildflowers */
-.nature-scene{position:relative;background:#eef0df}
-.nature-scene svg{filter:saturate(.92)}
-.goal-card{background-image:radial-gradient(circle at 95% 18%,#f1d8b83b 0 18px,transparent 19px),linear-gradient(120deg,#fffdf4,#edf1e5)}
-.goal-card:after{content:"🦋";position:absolute;right:12px;bottom:7px;font-size:17px;opacity:.56;transform:rotate(-12deg);pointer-events:none;filter:saturate(.7)}
-#page-period .card:first-child{background-image:radial-gradient(ellipse at 97% 7%,#e6eddd70 0 28px,transparent 29px),linear-gradient(145deg,#fffdf5,#f8f5e9)}
-#page-period .card:first-child h2:after{content:"  ✿";font-size:13px;color:#9aa982;vertical-align:2px}
+/* Woodland watercolor embellishments: richer, layered, but still calm and readable */
+body{
+ background:
+ radial-gradient(ellipse at 2% 14%,rgba(244,207,177,.48),transparent 30%),
+ radial-gradient(ellipse at 98% 28%,rgba(192,211,179,.48),transparent 33%),
+ radial-gradient(ellipse at 80% 88%,rgba(230,220,185,.25),transparent 27%),
+ #f4f0e7;
+}
+header{position:relative}
+header .nature-scene{border:1px solid rgba(255,255,255,.72);box-shadow:0 7px 22px rgba(91,107,78,.10)}
+.card{position:relative;isolation:isolate}
+.card:after{position:absolute;right:13px;bottom:8px;font-size:21px;opacity:.36;pointer-events:none;z-index:2;filter:saturate(.78)}
+#page-today>.card:nth-of-type(1):after{content:"🦋";right:17px;bottom:13px;transform:rotate(-12deg);opacity:.62}
+#page-today>.card:nth-of-type(2):after{content:"🌼";right:16px;bottom:12px;opacity:.35}
+#page-today>.card:nth-of-type(3):after{content:"🍄";right:17px;bottom:13px;opacity:.45}
+#page-today>.card:nth-of-type(4):after{content:"🦋";right:16px;bottom:10px;opacity:.36}
+#page-period .card:nth-child(1):after{content:"🦋";right:16px;top:13px;bottom:auto;opacity:.48}
+#page-period .card:nth-child(2):after{content:"🍄";right:15px;bottom:12px;opacity:.4}
+#page-week .card:after{content:"🌿";opacity:.28}
+#page-calendar .card:after{content:"🌼";opacity:.25}
+#page-history .card:after{content:"🦋";opacity:.32}
+.encouragement{position:relative;background:linear-gradient(125deg,rgba(255,253,244,.97),rgba(238,243,229,.96));border:1px dashed #cfd8c4;box-shadow:0 8px 22px rgba(102,123,91,.08)}
+.encouragement:before{content:"✿";position:absolute;right:18px;top:8px;color:#d8b47e;font-size:23px;opacity:.65;pointer-events:none}
+.nature-scene{position:relative}
+.nature-scene:after{content:"";display:block;position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+nav button,nav .nav-link{box-shadow:0 3px 8px rgba(89,95,75,.04)}
+nav button.active{box-shadow:0 5px 13px rgba(80,104,77,.18)}
+.card h2:before{box-shadow:0 2px 4px rgba(105,125,91,.12)}
+input,textarea,select{box-shadow:inset 0 1px 2px rgba(102,92,69,.025)}
+@media(min-width:600px){.nature-scene svg{max-height:175px}.card:after{font-size:24px}}
+@media(prefers-reduced-motion:no-preference){
+ .nature-scene svg g[transform*="translate(239"]{animation:butterflyDrift 5s ease-in-out infinite;transform-origin:239px 87px}
+ .nature-scene svg g[transform*="translate(439"]{animation:butterflyDrift 4.2s ease-in-out infinite reverse;transform-origin:439px 112px}
+}
+@keyframes butterflyDrift{0%,100%{translate:0 0}50%{translate:0 -4px}}
+
+.card>*{position:relative;z-index:1}
 
 </style>
 </head>
 <body>
 <header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p>
-<div class="nature-scene" aria-hidden="true"><svg viewBox="0 0 640 150" role="presentation" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="skyWash" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7f0df"/><stop offset="1" stop-color="#e9ead9"/></linearGradient><linearGradient id="hillWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c9d3b7"/><stop offset="1" stop-color="#aab99a"/></linearGradient></defs>
-<rect width="640" height="150" rx="22" fill="url(#skyWash)" opacity=".72"/><circle cx="520" cy="35" r="20" fill="#e6c98c" opacity=".55"/><path d="M0 91 Q78 35 160 81 T328 77 T488 72 T640 81 V150 H0Z" fill="#d7dfc7" opacity=".9"/><path d="M0 111 Q93 68 198 105 T395 100 T640 98 V150 H0Z" fill="url(#hillWash)" opacity=".85"/><path d="M0 132 Q110 96 220 127 T430 122 T640 125 V150 H0Z" fill="#b7c5a7" opacity=".82"/>
-<g stroke="#75876b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M75 112V54"/><path d="M75 70Q45 65 48 42Q70 45 75 70Z" fill="#9fb28e"/><path d="M75 83Q101 75 102 52Q80 57 75 83Z" fill="#9fb28e"/><path d="M75 93Q50 90 42 73Q64 71 75 93Z" fill="#b6c5a2"/><path d="M568 109V47"/><path d="M568 65Q536 60 541 34Q562 38 568 65Z" fill="#9fb28e"/><path d="M568 80Q598 69 598 48Q576 52 568 80Z" fill="#9fb28e"/><path d="M568 92Q541 88 535 70Q558 69 568 92Z" fill="#b6c5a2"/></g>
-<g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.5"><ellipse cx="317" cy="119" rx="17" ry="13"/><ellipse cx="307" cy="96" rx="5.5" ry="17" transform="rotate(-12 307 96)"/><ellipse cx="321" cy="95" rx="5.5" ry="18" transform="rotate(8 321 95)"/><circle cx="311" cy="117" r="1.7" fill="#625c51" stroke="none"/><circle cx="323" cy="117" r="1.7" fill="#625c51" stroke="none"/><ellipse cx="317" cy="121" rx="2.5" ry="1.8" fill="#c9948c" stroke="none"/></g>
-<g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.4"><ellipse cx="355" cy="125" rx="11" ry="9"/><circle cx="352" cy="120" r="1.4" fill="#625c51" stroke="none"/><circle cx="360" cy="120" r="1.4" fill="#625c51" stroke="none"/><path d="M349 112l-1-8 7 6M357 110l5-7 1 10" fill="#f8f4e8"/></g>
-<g stroke="#788b70" stroke-width="1.5" stroke-linecap="round" fill="none"><path d="M175 43q7-6 14 0q7-6 14 0"/><path d="M410 55q5-4 10 0q5-4 10 0"/></g><g aria-hidden="true" stroke-linejoin="round" stroke-linecap="round">
-<!-- tiny watercolor mushrooms -->
-<g transform="translate(154 91)" opacity=".96"><path d="M7 23Q8 11 12 10Q17 12 17 23Z" fill="#f3e8d3" stroke="#a6a78e" stroke-width="1.2"/><path d="M1 13Q3 2 12 2Q22 2 24 13Q13 18 1 13Z" fill="#c98270" stroke="#a76f62" stroke-width="1.2"/><circle cx="8" cy="8" r="1.5" fill="#fff4df" stroke="none"/><circle cx="16" cy="10" r="1.3" fill="#fff4df" stroke="none"/><path d="M4 24q8 3 17 0" fill="none" stroke="#91a17d" stroke-width="1.2"/></g>
-<g transform="translate(482 111) scale(.78)" opacity=".94"><path d="M7 23Q8 11 12 10Q17 12 17 23Z" fill="#f3e8d3" stroke="#a6a78e" stroke-width="1.2"/><path d="M1 13Q3 2 12 2Q22 2 24 13Q13 18 1 13Z" fill="#dca58a" stroke="#b77d68" stroke-width="1.2"/><circle cx="8" cy="8" r="1.5" fill="#fff4df" stroke="none"/><circle cx="16" cy="10" r="1.3" fill="#fff4df" stroke="none"/></g>
-<!-- delicate butterflies -->
-<g transform="translate(235 70) rotate(-12)" stroke="#c58d73" stroke-width="1.1"><path d="M0 7Q-16 -5 -13 7Q-11 14 -1 10Q-7 22 0 15Q7 22 2 10Q13 15 14 7Q16 -5 1 7Z" fill="#f2c59a"/><path d="M0 6v12" stroke="#897b65"/><circle cx="-8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/><circle cx="8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/></g>
-<g transform="translate(435 91) scale(.72) rotate(14)" stroke="#c58d73" stroke-width="1.2"><path d="M0 7Q-16 -5 -13 7Q-11 14 -1 10Q-7 22 0 15Q7 22 2 10Q13 15 14 7Q16 -5 1 7Z" fill="#f0c7a9"/><path d="M0 6v12" stroke="#897b65"/><circle cx="-8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/></g>
-</g>
-<g fill="#d7b77e"><circle cx="143" cy="125" r="2.5"/><circle cx="463" cy="116" r="2.5"/><circle cx="483" cy="132" r="2"/></g>
+<div class="nature-scene" aria-hidden="true"><svg viewBox="0 0 640 170" role="presentation" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="skyWash" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff6e5"/><stop offset="1" stop-color="#e9eee0"/></linearGradient>
+ <linearGradient id="hillWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5dfc5"/><stop offset="1" stop-color="#9eb58f"/></linearGradient>
+ <linearGradient id="mushroomCap" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e7a18b"/><stop offset="1" stop-color="#c97864"/></linearGradient>
+</defs>
+<rect width="640" height="170" rx="24" fill="url(#skyWash)"/>
+<circle cx="522" cy="35" r="21" fill="#e8c987" opacity=".65"/>
+<g fill="none" stroke="#8fa18a" stroke-width="2" stroke-linecap="round" opacity=".65"><path d="M174 43q8-7 16 0q8-7 16 0"/><path d="M410 54q6-5 12 0q6-5 12 0"/><path d="M270 31q5-4 10 0q5-4 10 0"/></g>
+<path d="M0 96Q70 34 151 77T305 76T472 68T640 83V170H0Z" fill="#dce5cf"/>
+<path d="M0 117Q90 71 190 109T385 104T640 100V170H0Z" fill="url(#hillWash)" opacity=".92"/>
+<path d="M0 143Q98 106 218 137T435 131T640 134V170H0Z" fill="#b6c9a7"/>
+<!-- distant watercolor shrubs -->
+<g fill="#9fb58f" opacity=".75"><circle cx="26" cy="116" r="10"/><circle cx="40" cy="111" r="13"/><circle cx="56" cy="119" r="9"/><circle cx="588" cy="111" r="13"/><circle cx="607" cy="116" r="10"/><circle cx="625" cy="110" r="12"/></g>
+<!-- trees -->
+<g stroke="#71876a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M75 127V57" fill="none"/><path d="M75 77Q42 70 46 43Q70 46 75 77Z" fill="#a5bb91"/><path d="M76 91Q106 79 103 53Q82 59 76 91Z" fill="#9ab38a"/><path d="M75 105Q48 100 41 81Q62 80 75 105Z" fill="#bed0a9"/><path d="M568 125V49" fill="none"/><path d="M568 68Q536 60 541 34Q563 39 568 68Z" fill="#a5bb91"/><path d="M568 85Q598 72 598 48Q576 53 568 85Z" fill="#9ab38a"/><path d="M568 99Q541 91 535 73Q558 72 568 99Z" fill="#bed0a9"/></g>
+<!-- flowers -->
+<g stroke="#c99a75" stroke-width="1"><g transform="translate(139 139)"><circle cy="-4" r="4" fill="#f0c982"/><circle cx="4" cy="0" r="4" fill="#f3d8a3"/><circle cy="4" r="4" fill="#f0c982"/><circle cx="-4" cy="0" r="4" fill="#f3d8a3"/><circle r="2" fill="#b98b61"/></g><g transform="translate(475 136)"><circle cy="-4" r="4" fill="#f0c982"/><circle cx="4" cy="0" r="4" fill="#f3d8a3"/><circle cy="4" r="4" fill="#f0c982"/><circle cx="-4" cy="0" r="4" fill="#f3d8a3"/><circle r="2" fill="#b98b61"/></g></g>
+<!-- spotted mushrooms -->
+<g stroke="#a36f5d" stroke-width="1.5" stroke-linejoin="round"><path d="M153 143L156 127Q162 122 168 127L171 143Z" fill="#f6e9d3"/><path d="M148 129Q161 108 175 129Z" fill="url(#mushroomCap)"/><g fill="#fff4dc" stroke="none"><circle cx="157" cy="124" r="2"/><circle cx="166" cy="121" r="2"/><circle cx="170" cy="128" r="1.5"/></g><path d="M488 145L491 133Q496 128 502 133L505 145Z" fill="#f6e9d3"/><path d="M485 135Q497 116 510 135Z" fill="url(#mushroomCap)"/><g fill="#fff4dc" stroke="none"><circle cx="493" cy="131" r="2"/><circle cx="501" cy="129" r="2"/></g></g>
+<!-- little rabbit -->
+<g stroke="#a4a995" stroke-width="1.5" stroke-linejoin="round"><ellipse cx="318" cy="137" rx="18" ry="14" fill="#fff8ed"/><ellipse cx="307" cy="105" rx="6" ry="21" transform="rotate(-12 307 105)" fill="#fff8ed"/><ellipse cx="324" cy="104" rx="6" ry="22" transform="rotate(7 324 104)" fill="#fff8ed"/><ellipse cx="307" cy="106" rx="2.5" ry="13" transform="rotate(-12 307 106)" fill="#e8c4c1" stroke="none"/><ellipse cx="324" cy="105" rx="2.5" ry="13" transform="rotate(7 324 105)" fill="#e8c4c1" stroke="none"/><circle cx="312" cy="135" r="1.8" fill="#59564c" stroke="none"/><circle cx="325" cy="135" r="1.8" fill="#59564c" stroke="none"/><ellipse cx="319" cy="140" rx="2.7" ry="2" fill="#d59a98" stroke="none"/></g>
+<!-- tiny hedgehog friend -->
+<g stroke="#8d8d72" stroke-width="1.3" stroke-linejoin="round"><ellipse cx="356" cy="143" rx="12" ry="9" fill="#f5ead6"/><path d="M346 136l-2-8 7 5 3-8 4 8 6-5-1 9" fill="#b5a78a"/><circle cx="359" cy="141" r="1.5" fill="#5a554a" stroke="none"/><circle cx="366" cy="144" r="1.3" fill="#c78d81" stroke="none"/></g>
+<!-- butterflies -->
+<g stroke="#c98569" stroke-width="1.2" stroke-linejoin="round"><g transform="translate(239 87) rotate(-15)"><path d="M0 0Q-16-19-14-3Q-10 5 0 2Q9-17 15-4Q14 7 0 2Z" fill="#f4c39b"/><path d="M0 0V12" stroke="#8d8a6e"/><path d="M0 1l-4-7M0 1l4-7" fill="none"/></g><g transform="translate(439 112) rotate(18) scale(.7)"><path d="M0 0Q-16-19-14-3Q-10 5 0 2Q9-17 15-4Q14 7 0 2Z" fill="#f4c39b"/><path d="M0 0V12" stroke="#8d8a6e"/><path d="M0 1l-4-7M0 1l4-7" fill="none"/></g></g>
 </svg></div></header>
 <nav id="nav">
 <button class="active" data-page="today">今日</button><button data-page="period" id="periodNav">健康记录</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>

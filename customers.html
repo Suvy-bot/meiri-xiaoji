@@ -8,6 +8,18 @@
 body{background:radial-gradient(ellipse at 0% 8%,#f2e2d1 0,transparent 36%),radial-gradient(ellipse at 100% 15%,#e0e9d8 0,transparent 35%),#f1f0e5;color:var(--ink)}
 .card{background:rgba(255,253,247,.95);border-color:#e2e2d5;box-shadow:0 8px 24px #59664d0c;border-radius:22px}.avatar{background:#e9eee2}.person{background:#fffef8;border-color:#e5e6d9}.tabs button.active{background:#e8eee2;border-color:#b8c6b0;color:#566b54}.primary{background:linear-gradient(135deg,#8ea58a,#748d75);border-color:#829980}.hole{border-color:#d4d9c9}.empty{color:var(--muted)}input,select{border-color:#dfe0d2;background:#fffef9;outline-color:#93a58d}button{border-color:#dfe0d2;background:#fffdf7;color:#4d5146}
 
+
+/* Matching woodland watercolor theme */
+body{background:radial-gradient(ellipse at 0% 10%,rgba(245,210,183,.42),transparent 33%),radial-gradient(ellipse at 100% 22%,rgba(196,215,185,.48),transparent 34%),#f4f0e7}
+header{position:relative}
+header:after{content:"🍄  🦋";position:absolute;right:8px;bottom:0;font-size:19px;opacity:.58;pointer-events:none}
+.card{position:relative;background:rgba(255,253,247,.95);box-shadow:0 9px 24px rgba(92,109,79,.09)}
+.person{background:linear-gradient(140deg,#fffdf8,#f5f4e9);border-color:#e1e3d5}
+.avatar{background:#e9eee2}
+button.primary,.primary{background:linear-gradient(135deg,#8fa58a,#748d75);border-color:#81987d}
+.tabs button.active{background:#e5ecdf;border-color:#b5c6ad;color:#536b51}
+.card h2:after{content:" ✿";font-size:13px;color:#d1b17b;opacity:.75}
+
 </style></head><body><div class="wrap"><header><div class="row"><a class="back" href="./index.html" aria-label="返回每日小记">‹</a><div><h1>顾客季卡</h1><p>独立管理顾客姓名与到访次数</p></div></div><button id="settingsBtn" class="small">导出备份</button></header>
 <div class="card"><h2>新增顾客</h2><div class="formgrid"><div class="field" style="margin:0"><label for="newName">顾客姓名</label><input id="newName" placeholder="输入顾客姓名"></div><div class="field" style="margin:0"><label for="newType">季卡类型</label><select id="newType"><option value="11">11 天季卡</option><option value="30">30 天季卡</option></select></div></div><button id="add" class="primary full" style="margin-top:12px">＋ 新增顾客</button></div>
 <div class="card"><div class="tabs"><button id="tabList" class="active">顾客列表</button><button id="tabVisits">到访记录</button></div><input class="search" id="search" placeholder="⌕ 搜索顾客姓名"><div id="list"></div><div id="visits" hidden></div></div><div class="footer">顾客季卡独立储存 · 与每日小记分开</div></div>
