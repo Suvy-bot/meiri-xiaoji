@@ -1,0 +1,8 @@
+每日小记统一更新包
+
+文件：index.html、customers.html、sw.js、manifest.webmanifest、icon-192.png、icon-512.png。
+请在 GitHub 仓库根目录上传并覆盖同名文件。不要删除仓库中的其他文件。
+本版继续使用 daily-notebook-v1 本地储存键，保留现有日记数据；导入旧 JSON 前建议先导出当前备份。
+首次升级会显示个人设置，选择性别并填写想使用的称呼。女生可使用月经记录。
+
+注意：网页文件不会自动修改 GitHub，需手动上传覆盖后才能在网址生效。
