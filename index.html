@@ -51,10 +51,36 @@ nav button{background:#fffdf7;border-color:#e2dacb}nav button.active{background:
 [hidden]{display:none!important}
 
 .weight-trend-svg{display:block;width:100%;height:auto;min-height:160px}.weight-trend-grid{stroke:#e9ddcf;stroke-width:1;stroke-dasharray:3 4}.weight-trend-line{fill:none;stroke:#829879;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.weight-trend-point{fill:#fffaf3;stroke:#829879;stroke-width:2.5}.weight-trend-label{fill:#928176;font-size:10px}.weight-trend-current{fill:#657565;font-size:11px;font-weight:700}.weight-trend-history-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f0e3d8;font-size:13px}.weight-trend-history-row:last-child{border-bottom:0}
+
+/* Japanese watercolor nature theme — neutral, quiet, outdoorsy */
+:root{--bg:#f1f0e5;--paper:#fffdf6;--ink:#4d5146;--muted:#858879;--line:#dedfce;--accent:#788c70;--accent2:#d8c9a8;--green:#8fa68a;--rose:#c7a8a0;--shadow:0 8px 24px #52624b10}
+body{background:radial-gradient(ellipse at 0% 8%,#f2e2d1 0,transparent 36%),radial-gradient(ellipse at 100% 15%,#e0e9d8 0,transparent 35%),radial-gradient(ellipse at 48% 100%,#e7e9dc 0,transparent 42%),#f1f0e5;color:var(--ink)}
+header{padding-top:24px;padding-bottom:12px}header .eyebrow{color:#8c907b;font-size:11px;letter-spacing:2.4px}header h1{color:#4d5146;font-weight:750;letter-spacing:.4px}header p{color:#858879}
+.nature-scene{margin-top:15px;border-radius:22px;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff8c;opacity:.97}.nature-scene svg{display:block;width:100%;height:auto;max-height:150px}
+.card{background:rgba(255,253,247,.94);border-color:#e2e2d5;border-radius:22px;box-shadow:0 8px 24px #59664d0c;backdrop-filter:blur(2px)}.card h2{color:#555b4d}.card h2:before{background:#b3bea0}
+.metric{background:linear-gradient(140deg,#f0f0e4,#f5f0e2);border-color:#e3e3d4}.water-progress{background:#e3e8db}.water-progress span{background:linear-gradient(90deg,#b6c8b0,#8da78d)}
+button{border-color:#dfe0d2;background:#fffdf7;color:#4d5146}button.primary{background:linear-gradient(135deg,#8ea58a,#748d75);border-color:#829980;box-shadow:0 4px 10px #718b7020}button.soft{background:#eef0e4;border-color:#dfe4d5}
+nav button{background:rgba(255,253,247,.92);border-color:#dedfce;color:#565a4d}nav button.active{background:#697e68;border-color:#697e68;box-shadow:0 4px 12px #62796020}nav .nav-link{background:rgba(255,253,247,.92);border-color:#dedfce}
+.mood{background:linear-gradient(150deg,#fffef9,#f6f5ea);border-color:#e1e3d7}.mood.selected{background:#e8eee2;border-color:#9eaf98;box-shadow:0 4px 12px #758c701b}.mood[data-mood="低落"]{color:#6c8790}.mood[data-mood="低落"] svg{stroke:#8eafb7}
+.task-section-label{background:#f0e5d7;color:#79614e}.task-section-label.repeat-tag{background:#657b65;color:#fffdf6}.taskrow{border-bottom-color:#e9e8dc}.taskrow input[type=checkbox]{accent-color:#82977d}.taskrow .smallbtn{background:#f4f2e8;border-color:#e0e1d5}.notice{background:#f0f1e6;border-color:#e0e3d6}.empty{background:#faf9f0;border-color:#dfe2d4}.footer{color:#8d927f}
+.encouragement{background:linear-gradient(120deg,#fffdf4,#edf1e5);border:1px dashed #d1d9c7}.animal svg{filter:saturate(.82)}.weight-trend-grid{stroke:#e0e4d8}.weight-trend-line{stroke:#7f9b7b}.weight-trend-point{fill:#fffdf6;stroke:#7f9b7b}.weight-trend-label{fill:#858879}.weight-trend-current{fill:#627a61}
+input,textarea,select{border-color:#dfe0d2;background:#fffef9;outline-color:#93a58d}input:focus,textarea:focus,select:focus{box-shadow:0 0 0 3px #dfe8d980;border-color:#9cad96}
+.day.today{border-color:#7d9678}.day.chosen{background:#e7ecdf}.dot{background:#839b7d}.period-day.on-period{background:#f0e5e5;border-color:#ddc8c5}.period-stat{background:#f0f1e8}
+@media(max-width:420px){.nature-scene{margin-top:12px}.nature-scene svg{min-height:85px}.card{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
-<header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p></header>
+<header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p>
+<div class="nature-scene" aria-hidden="true"><svg viewBox="0 0 640 150" role="presentation" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="skyWash" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7f0df"/><stop offset="1" stop-color="#e9ead9"/></linearGradient><linearGradient id="hillWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c9d3b7"/><stop offset="1" stop-color="#aab99a"/></linearGradient></defs>
+<rect width="640" height="150" rx="22" fill="url(#skyWash)" opacity=".72"/><circle cx="520" cy="35" r="20" fill="#e6c98c" opacity=".55"/><path d="M0 91 Q78 35 160 81 T328 77 T488 72 T640 81 V150 H0Z" fill="#d7dfc7" opacity=".9"/><path d="M0 111 Q93 68 198 105 T395 100 T640 98 V150 H0Z" fill="url(#hillWash)" opacity=".85"/><path d="M0 132 Q110 96 220 127 T430 122 T640 125 V150 H0Z" fill="#b7c5a7" opacity=".82"/>
+<g stroke="#75876b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M75 112V54"/><path d="M75 70Q45 65 48 42Q70 45 75 70Z" fill="#9fb28e"/><path d="M75 83Q101 75 102 52Q80 57 75 83Z" fill="#9fb28e"/><path d="M75 93Q50 90 42 73Q64 71 75 93Z" fill="#b6c5a2"/><path d="M568 109V47"/><path d="M568 65Q536 60 541 34Q562 38 568 65Z" fill="#9fb28e"/><path d="M568 80Q598 69 598 48Q576 52 568 80Z" fill="#9fb28e"/><path d="M568 92Q541 88 535 70Q558 69 568 92Z" fill="#b6c5a2"/></g>
+<g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.5"><ellipse cx="317" cy="119" rx="17" ry="13"/><ellipse cx="307" cy="96" rx="5.5" ry="17" transform="rotate(-12 307 96)"/><ellipse cx="321" cy="95" rx="5.5" ry="18" transform="rotate(8 321 95)"/><circle cx="311" cy="117" r="1.7" fill="#625c51" stroke="none"/><circle cx="323" cy="117" r="1.7" fill="#625c51" stroke="none"/><ellipse cx="317" cy="121" rx="2.5" ry="1.8" fill="#c9948c" stroke="none"/></g>
+<g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.4"><ellipse cx="355" cy="125" rx="11" ry="9"/><circle cx="352" cy="120" r="1.4" fill="#625c51" stroke="none"/><circle cx="360" cy="120" r="1.4" fill="#625c51" stroke="none"/><path d="M349 112l-1-8 7 6M357 110l5-7 1 10" fill="#f8f4e8"/></g>
+<g stroke="#788b70" stroke-width="1.5" stroke-linecap="round" fill="none"><path d="M175 43q7-6 14 0q7-6 14 0"/><path d="M410 55q5-4 10 0q5-4 10 0"/></g><g fill="#d7b77e"><circle cx="143" cy="125" r="2.5"/><circle cx="463" cy="116" r="2.5"/><circle cx="483" cy="132" r="2"/></g>
+</svg></div></header>
 <nav id="nav">
 <button class="active" data-page="today">今日</button><button data-page="period" id="periodNav">健康记录</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>
 </nav>
