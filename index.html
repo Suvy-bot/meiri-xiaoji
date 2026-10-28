@@ -475,7 +475,7 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 </div>
 <div class="field"><label for="healthSymptoms">身体变化或症状</label><textarea id="healthSymptoms" placeholder="例如：头痛、鼻塞、胃胀、肌肉酸痛……"></textarea></div>
 <div class="field"><label for="healthNote">睡眠／身体备注</label><textarea id="healthNote" placeholder="例如：睡前喝了咖啡、夜里醒了两次……"></textarea></div>
-<button class="primary" id="saveHealthDay" style="width:100%">保存记录</button><div id="healthSaveStatus" class="sub" style="margin-top:8px">记录会保存在当前浏览器。</div></div>
+<div class="save-scene-wrap"><img class="save-scene-art save-scene-bunny" src="./save-bunny.png" alt="" aria-hidden="true"><button class="primary" id="saveHealthDay">保存记录</button><img class="save-scene-art save-scene-mushroom" src="./save-mushrooms.png" alt="" aria-hidden="true"></div><div id="healthSaveStatus" class="sub save-status">记录会保存在当前浏览器。</div></div>
 <div class="card"><div class="row between"><h2>体重变化追踪</h2><span class="sub">按记录日期统计</span></div><p class="sub">每天记录体重后，这里会自动绘制最近 30 次体重记录的变化趋势。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近体重</span><strong id="weightTrackLatest">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">与首笔记录差值</span><strong id="weightTrackChange">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">已记录次数</span><strong id="weightTrackCount">0</strong><span class="sub">次</span></div></div><div id="weightTrendChart" role="img" aria-label="最近 30 次体重记录趋势图" style="margin-top:14px;overflow:hidden"></div><div id="weightTrendSummary" class="notice" style="margin-top:10px">保存至少一笔体重记录后，会显示体重变化。</div><div id="weightTrackHistory" style="margin-top:10px"></div></div>
 <div class="card" id="weight-panel"><h2>睡眠与体重趋势</h2><div class="period-stats"><div class="period-stat"><span class="sub">近 7 天平均睡眠</span><strong id="avgSleep">—</strong><span class="sub">小时／晚</span></div><div class="period-stat"><span class="sub">最近体重</span><strong id="latestWeight">—</strong><span class="sub">kg</span></div><div class="period-stat"><span class="sub">近 7 天记录</span><strong id="healthLogCount">0</strong><span class="sub">天</span></div></div><div id="healthHistory" class="health-history-anchor" style="margin-top:12px"></div><p class="sub" style="margin-top:10px">趋势仅用于个人观察，不用于诊断。体重短期变化可能受水分、饮食和其他因素影响。</p></div>
 <div class="card" id="period-panel"><div class="row between"><h2>经期记录（可选）</h2><span class="sub">不需要性别设置</span></div><p class="sub">记录经期开始与结束、经量、身体感受及心情。周期预测仅供参考。</p><div class="period-stats"><div class="period-stat"><span class="sub">最近开始</span><strong id="periodLastStart">—</strong><span class="sub">日期</span></div><div class="period-stat"><span class="sub">平均周期</span><strong id="periodAvgCycle">—</strong><span class="sub">天</span></div><div class="period-stat"><span class="sub">平均经期</span><strong id="periodAvgLength">—</strong><span class="sub">天</span></div></div><p id="periodPrediction" class="notice" style="margin-top:12px">记录几次经期后，会显示周期参考。</p></div>
@@ -682,5 +682,27 @@ load();renderToday();renderTasks();renderWeek();renderCalendar();renderHistory()
 @media(max-width:600px){
  .health-form-card{padding-bottom:150px!important}
  .health-form-card::after{height:150px!important;background-size:cover!important;background-position:center bottom!important}
+}
+</style>
+
+<style id="storybook-save-scene-v25">
+/* Save button framed by side illustrations: no footer banner, no art over text. */
+.health-form-card{padding-bottom:22px!important}
+.health-form-card::after{display:none!important;content:none!important;background:none!important}
+.save-scene-wrap{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:18px auto 0;position:relative;isolation:isolate}
+.save-scene-art{display:block;flex:0 1 104px;width:104px;height:94px;object-fit:contain;object-position:center bottom;pointer-events:none;user-select:none;position:relative;z-index:1}
+.save-scene-bunny{object-position:center bottom}
+.save-scene-mushroom{object-position:center bottom}
+#saveHealthDay{display:block;flex:1 1 260px;width:auto!important;max-width:520px;min-width:0;min-height:56px;margin:0!important;padding:12px 18px!important;border-radius:999px!important;background:linear-gradient(135deg,#789574 0%,#557a56 100%)!important;border:1px solid #648360!important;color:#fffdf3!important;font-size:17px!important;font-weight:700!important;letter-spacing:1px;box-shadow:0 5px 13px rgba(72,105,68,.17),inset 0 1px 0 rgba(255,255,255,.18)!important;position:relative;z-index:2;white-space:nowrap}
+.save-status{margin-top:8px!important;text-align:center;color:#8c8878}
+@media(max-width:600px){
+ .health-form-card{padding-bottom:20px!important}
+ .save-scene-wrap{gap:3px;margin-top:16px}
+ .save-scene-art{flex:0 1 72px;width:72px;height:82px}
+ #saveHealthDay{flex:1 1 auto;min-height:54px;padding:10px 8px!important;font-size:15px!important;letter-spacing:.4px}
+}
+@media(max-width:360px){
+ .save-scene-art{flex-basis:54px;width:54px;height:72px}
+ #saveHealthDay{font-size:14px!important}
 }
 </style>
