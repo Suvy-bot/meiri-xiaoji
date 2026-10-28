@@ -21,87 +21,11 @@ button.primary,.primary{background:linear-gradient(135deg,#8fa58a,#748d75);borde
 .card h2:after{content:" ✿";font-size:13px;color:#d1b17b;opacity:.75}
 
 
-/* Full woodland watercolor atmosphere to match the journal */
-:root{--bg:#f4f0e4;--paper:#fffaf0;--ink:#4f5145;--muted:#888b7a;--line:#e4e0d0;--accent:#82977b}
-body{background:radial-gradient(ellipse at 4% 9%,rgba(246,211,187,.55),transparent 28%),radial-gradient(ellipse at 95% 22%,rgba(199,218,187,.55),transparent 32%),#f4f0e4}
-.wrap{max-width:980px}
-header{padding-top:28px}
-.page-banner{position:relative;overflow:hidden;width:100%;height:148px;margin:0 0 16px;border:1px solid rgba(255,255,255,.82);border-radius:25px;background:#e5ead9;box-shadow:0 8px 24px rgba(88,105,77,.10)}
-.page-banner svg{display:block;width:100%;height:100%;object-fit:cover}
-.card{border-radius:25px!important;padding:22px!important;border-color:rgba(224,220,202,.88)!important;background:radial-gradient(ellipse at 100% 100%,rgba(211,222,193,.16),transparent 28%),linear-gradient(145deg,rgba(255,253,245,.98),rgba(250,247,235,.97))!important;box-shadow:0 9px 25px rgba(76,89,64,.075),inset 0 1px 0 rgba(255,255,255,.9)!important}
-.card h2{color:#555b4c!important}.card h2:before{content:"";display:inline-block;width:8px;height:19px;border-radius:8px;background:#b2c19f;margin-right:10px;vertical-align:-3px}
-.person{border-radius:22px;background:linear-gradient(140deg,#fffef8,#f2f3e7)!important;border-color:#e1e3d5!important}
-.avatar{background:#e9eee2!important}
-button,input,select{border-radius:15px!important;border-color:#dedfce}
-.primary{background:linear-gradient(135deg,#8ea58a,#728b72)!important;border-color:#829a80!important}
-.tabs button.active{background:#e5ecdf!important;border-color:#b5c6ad!important;color:#536b51!important}
-.hole{border-color:#d4d9c9}
-@media(max-width:460px){.page-banner{height:112px;border-radius:20px;margin-bottom:12px}.card{padding:16px!important;border-radius:22px!important}}
+/* Matching full watercolor woodland redesign */
+body{background:radial-gradient(ellipse at 4% 5%,rgba(244,210,179,.48),transparent 34%),radial-gradient(ellipse at 96% 16%,rgba(194,216,182,.5),transparent 35%),#f5f0e4;background-attachment:fixed}
+.wrap{max-width:900px}.wrap>header{display:block;position:relative;padding:20px 2px 140px;background-image:url('./woodland-scene.svg');background-size:100% 132px;background-repeat:no-repeat;background-position:center bottom;border-radius:0 0 24px 24px;margin-bottom:16px}header h1{font-size:29px;color:#4d5947}header p{color:#858675}.back{background:#fffaf0;box-shadow:0 3px 10px #5b674a12;border:1px solid #e4dfce}.card{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(155deg,rgba(255,253,246,.97),rgba(255,249,236,.96));border-color:#dedcc9;box-shadow:0 8px 22px rgba(91,91,64,.1)}.card:after{content:"";position:absolute;z-index:0;bottom:0;left:0;right:0;height:36px;pointer-events:none;background:url('./woodland-scene.svg') center bottom/cover no-repeat;opacity:.18}.card>*{position:relative;z-index:1}.card h2{color:#4d5947}.card h2:after{content:"";display:inline-block;width:28px;height:22px;margin-left:8px;vertical-align:-5px;background:url('./woodland-scene.svg') center/cover;opacity:.65}.person{border-radius:20px;background:linear-gradient(145deg,rgba(255,254,248,.98),rgba(244,244,231,.97));border-color:#e1e3d5;box-shadow:0 4px 12px #7285680c}.avatar{background:linear-gradient(145deg,#eaf0e2,#f7e6d7);border:1px solid #e4e5d5}.tabs button{border-radius:999px}.tabs button.active{background:#e3eddc;border-color:#b7c9ae;color:#536b50}.primary{background:linear-gradient(135deg,#829d7b,#5e7b5b);border-color:#779171;box-shadow:0 5px 13px rgba(89,122,82,.2)}button,input,select{border-radius:14px}input,select{background:#fffef8;border-color:#e0ddcb}button{background:#fffdf6;border-color:#dfddcc}@media(max-width:420px){.wrap>header{padding-bottom:112px;background-size:100% 110px}.card{border-radius:21px}}
 
 </style></head><body><div class="wrap"><header><div class="row"><a class="back" href="./index.html" aria-label="返回每日小记">‹</a><div><h1>顾客季卡</h1><p>独立管理顾客姓名与到访次数</p></div></div><button id="settingsBtn" class="small">导出备份</button></header>
-<div class="page-banner customer-banner" aria-hidden="true"><svg viewBox="0 0 760 178" preserveAspectRatio="xMidYMid slice" role="img" aria-label="日系水彩森林草原插画" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="sky2" x1="0" y1="0" x2="0.1" y2="1"><stop stop-color="#f8f1e3"/><stop offset="1" stop-color="#eef0df"/></linearGradient>
-      <linearGradient id="hill2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d4dfc7"/><stop offset="1" stop-color="#a8bd9a"/></linearGradient>
-      <filter id="soft2"><feGaussianBlur stdDeviation="1.2"/></filter>
-    </defs>
-    <rect width="760" height="178" rx="24" fill="url(#sky2)"/>
-    <g opacity=".36" fill="#fffdf2" filter="url(#soft2)">
-      <ellipse cx="125" cy="30" rx="100" ry="23"/><ellipse cx="375" cy="19" rx="92" ry="19"/><ellipse cx="634" cy="33" rx="100" ry="25"/>
-    </g>
-    <circle cx="630" cy="35" r="20" fill="#e8c984" opacity=".68"/>
-    <path d="M0 92 C68 44 130 58 190 88 S298 112 372 73 S512 53 580 82 S687 93 760 61 V178 H0Z" fill="#d4dfc7" opacity=".8"/>
-    <path d="M0 115 C93 77 151 84 232 109 S358 128 438 97 S581 82 650 110 S720 111 760 100 V178 H0Z" fill="url(#hill2)" opacity=".95"/>
-    <path d="M0 142 C95 115 168 130 252 145 S399 149 489 131 S641 132 760 119 V178 H0Z" fill="#a8bd9a" opacity=".96"/>
-    <!-- watercolor trees -->
-    <g stroke="#758f73" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M77 140V54"/>
-      <path d="M77 80C43 73 39 47 46 38C67 43 77 60 77 80Z" fill="#a9bd98"/>
-      <path d="M77 95C109 86 117 60 112 49C91 55 79 74 77 95Z" fill="#c1cfac"/>
-      <path d="M77 112C49 108 37 88 39 77C61 80 74 96 77 112Z" fill="#b4c7a0"/>
-      <path d="M680 141V49"/>
-      <path d="M680 75C647 69 641 42 649 32C669 38 680 56 680 75Z" fill="#a9bd98"/>
-      <path d="M680 94C713 83 719 59 714 48C693 54 682 73 680 94Z" fill="#c1cfac"/>
-      <path d="M680 112C652 107 640 89 642 78C663 81 676 97 680 112Z" fill="#b4c7a0"/>
-    </g>
-    <!-- mushrooms -->
-    <g stroke="#b77761" stroke-width="1.5" stroke-linejoin="round">
-      <path d="M167 150L170 132Q177 126 184 132L187 150Z" fill="#f1dfc7" stroke="#c3a68b"/>
-      <path d="M158 134Q175 108 192 134Z" fill="#d99b72"/>
-      <circle cx="169" cy="128" r="2.1" fill="#fff1d8" stroke="none"/><circle cx="181" cy="125" r="2.1" fill="#fff1d8" stroke="none"/>
-      <path d="M566 153L569 138Q576 132 583 138L586 153Z" fill="#f1dfc7" stroke="#c3a68b"/>
-      <path d="M558 140Q576 115 594 140Z" fill="#d99b72"/>
-      <circle cx="570" cy="134" r="2" fill="#fff1d8" stroke="none"/><circle cx="582" cy="132" r="2" fill="#fff1d8" stroke="none"/>
-      <path d="M604 157L606 146Q611 141 616 146L618 157Z" fill="#f1dfc7" stroke="#c3a68b"/>
-      <path d="M598 147Q611 129 624 147Z" fill="#e5b98c"/>
-    </g>
-    <!-- little bunny -->
-    <g transform="translate(358 110)" stroke="#b6ab99" stroke-width="1.4" stroke-linejoin="round">
-      <ellipse cx="0" cy="29" rx="19" ry="16" fill="#f7f1e6"/>
-      <ellipse cx="-8" cy="3" rx="6.2" ry="19" transform="rotate(-10 -8 3)" fill="#f8f2e7"/>
-      <ellipse cx="7" cy="2" rx="6.2" ry="20" transform="rotate(8 7 2)" fill="#f8f2e7"/>
-      <ellipse cx="-8" cy="3" rx="2.7" ry="12" transform="rotate(-10 -8 3)" fill="#e8c7c2" stroke="none"/>
-      <ellipse cx="7" cy="2" rx="2.7" ry="13" transform="rotate(8 7 2)" fill="#e8c7c2" stroke="none"/>
-      <circle cx="-6" cy="25" r="1.8" fill="#65584f" stroke="none"/><circle cx="7" cy="25" r="1.8" fill="#65584f" stroke="none"/>
-      <ellipse cx="1" cy="30" rx="2.5" ry="2" fill="#d69a95" stroke="none"/>
-      <ellipse cx="-12" cy="30" rx="4" ry="2.5" fill="#e6b4ad" opacity=".7" stroke="none"/>
-      <ellipse cx="13" cy="30" rx="4" ry="2.5" fill="#e6b4ad" opacity=".7" stroke="none"/>
-    </g>
-    <!-- butterflies -->
-    <g transform="translate(262 60)" stroke="#c78d70" stroke-width="1.1" fill="#edc5a4" opacity=".95">
-      <path d="M0 0C-20 -21 -24 -3 -5 5C-19 15 -9 23 1 7C11 22 22 12 6 5C24 -10 14 -22 0 0Z"/>
-      <path d="M0 1V12" stroke="#9c8068" fill="none"/>
-    </g>
-    <g transform="translate(488 92) scale(.72)" stroke="#c78d70" stroke-width="1.1" fill="#f0d0ad">
-      <path d="M0 0C-20 -21 -24 -3 -5 5C-19 15 -9 23 1 7C11 22 22 12 6 5C24 -10 14 -22 0 0Z"/>
-      <path d="M0 1V12" stroke="#9c8068" fill="none"/>
-    </g>
-    <!-- flowers and grass -->
-    <g stroke="#758f73" stroke-width="1.3" stroke-linecap="round">
-      <path d="M230 168v-16m0 8l-7-5m7 9l8-7M310 169v-12m0 5l-6-4m6 7l6-5M446 168v-15m0 7l-7-5m7 9l8-6M524 168v-13m0 6l-7-4m7 8l7-5"/>
-    </g>
-    <g fill="#f1d4a0"><circle cx="230" cy="149" r="3"/><circle cx="310" cy="155" r="2.7"/><circle cx="446" cy="151" r="3"/><circle cx="524" cy="155" r="2.7"/></g>
-    </svg></div>
 <div class="card"><h2>新增顾客</h2><div class="formgrid"><div class="field" style="margin:0"><label for="newName">顾客姓名</label><input id="newName" placeholder="输入顾客姓名"></div><div class="field" style="margin:0"><label for="newType">季卡类型</label><select id="newType"><option value="11">11 天季卡</option><option value="30">30 天季卡</option></select></div></div><button id="add" class="primary full" style="margin-top:12px">＋ 新增顾客</button></div>
 <div class="card"><div class="tabs"><button id="tabList" class="active">顾客列表</button><button id="tabVisits">到访记录</button></div><input class="search" id="search" placeholder="⌕ 搜索顾客姓名"><div id="list"></div><div id="visits" hidden></div></div><div class="footer">顾客季卡独立储存 · 与每日小记分开</div></div>
 <script>

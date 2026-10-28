@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8e8"/><stop offset="1" stop-color="#e9f0df"/></linearGradient>
+ <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dbe7c9"/><stop offset="1" stop-color="#a8c29b"/></linearGradient>
+ <linearGradient id="mcap" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#efb19a"/><stop offset="1" stop-color="#c97968"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation=".7"/></filter>
+</defs>
+<rect width="1200" height="250" rx="28" fill="url(#sky)"/>
+<g opacity=".35" fill="#fff"><ellipse cx="180" cy="42" rx="100" ry="25"/><ellipse cx="212" cy="37" rx="75" ry="28"/><ellipse cx="780" cy="36" rx="110" ry="27"/><ellipse cx="822" cy="34" rx="70" ry="24"/></g>
+<circle cx="1020" cy="42" r="27" fill="#f0d49b" opacity=".8"/>
+<path d="M0 132 Q100 55 225 104 T460 103 T700 90 T930 103 T1200 82 V250 H0Z" fill="#dce7d0"/>
+<path d="M0 161 Q145 93 290 145 T560 137 T840 143 T1040 124 T1200 141 V250 H0Z" fill="url(#hill)"/>
+<path d="M0 194 Q150 147 310 187 T620 182 T900 178 T1200 173 V250 H0Z" fill="#b8cda9"/>
+<path d="M0 220 Q180 184 365 214 T700 213 T990 202 T1200 211 V250 H0Z" fill="#cbd8b7"/>
+<!-- distant tree clusters -->
+<g fill="#9cb58d" opacity=".65"><circle cx="55" cy="142" r="26"/><circle cx="83" cy="130" r="34"/><circle cx="111" cy="143" r="25"/><circle cx="1070" cy="132" r="34"/><circle cx="1105" cy="141" r="26"/><circle cx="1142" cy="134" r="32"/></g>
+<!-- left tree -->
+<g stroke="#72896d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M120 205V67" fill="none"/><path d="M120 103Q67 91 74 45Q112 56 120 103Z" fill="#a9c39b"/><path d="M121 126Q174 104 169 61Q133 72 121 126Z" fill="#8fae85"/><path d="M120 155Q72 143 60 111Q100 112 120 155Z" fill="#c0d3ae"/><path d="M1082 205V60" fill="none"/><path d="M1082 97Q1034 82 1040 41Q1074 52 1082 97Z" fill="#b6caa2"/><path d="M1083 120Q1128 101 1124 62Q1094 74 1083 120Z" fill="#93b08a"/><path d="M1082 151Q1038 137 1028 110Q1065 111 1082 151Z" fill="#c8d9b6"/></g>
+<!-- little fence -->
+<g stroke="#a98b68" stroke-width="5" stroke-linecap="round" opacity=".78"><path d="M425 213V175M465 214V170M505 214V178M414 188H516"/></g>
+<!-- mushrooms -->
+<g stroke="#a16e5e" stroke-width="2.5" stroke-linejoin="round"><path d="M183 220L188 194Q199 184 210 195L215 220Z" fill="#f7e8cf"/><path d="M176 198Q198 163 221 198Z" fill="url(#mcap)"/><g fill="#fff4dd" stroke="none"><circle cx="190" cy="191" r="4"/><circle cx="203" cy="184" r="3.5"/><circle cx="212" cy="194" r="3"/></g><path d="M956 225L960 202Q970 194 981 203L985 225Z" fill="#f7e8cf"/><path d="M950 205Q972 174 993 205Z" fill="url(#mcap)"/><g fill="#fff4dd" stroke="none"><circle cx="964" cy="199" r="3.5"/><circle cx="977" cy="193" r="3.5"/><circle cx="985" cy="202" r="2.5"/></g></g>
+<!-- rabbit -->
+<g stroke="#aaa995" stroke-width="2.4" stroke-linejoin="round"><ellipse cx="604" cy="212" rx="28" ry="24" fill="#fff9ed"/><ellipse cx="584" cy="164" rx="10" ry="31" transform="rotate(-13 584 164)" fill="#fff9ed"/><ellipse cx="613" cy="160" rx="10" ry="33" transform="rotate(8 613 160)" fill="#fff9ed"/><ellipse cx="584" cy="164" rx="4" ry="22" transform="rotate(-13 584 164)" fill="#e9c6c3" stroke="none"/><ellipse cx="613" cy="160" rx="4" ry="23" transform="rotate(8 613 160)" fill="#e9c6c3" stroke="none"/><circle cx="594" cy="207" r="2.8" fill="#5b584d" stroke="none"/><circle cx="613" cy="207" r="2.8" fill="#5b584d" stroke="none"/><ellipse cx="604" cy="215" rx="4" ry="3" fill="#d99b99" stroke="none"/><path d="M601 220q3 4 7 0" fill="none" stroke="#8e7b70" stroke-width="1.5"/></g>
+<!-- hedgehog -->
+<g stroke="#9c927e" stroke-width="2"><ellipse cx="660" cy="220" rx="18" ry="13" fill="#f4e7d1"/><path d="M644 211l-1-14 11 8 4-15 7 14 11-9-2 15" fill="#b4a487"/><circle cx="666" cy="217" r="2" fill="#5c5548" stroke="none"/><circle cx="674" cy="221" r="2" fill="#c98e7d" stroke="none"/></g>
+<!-- flowers and grass -->
+<g stroke-linecap="round" fill="none" stroke-width="2"><path d="M285 240q-3-22 4-32M310 240q4-17 13-24M860 240q-3-24 2-34M895 240q5-18 14-24" stroke="#7c9b70"/><path d="M287 222l-11-8M291 229l11-10M861 222l-10-8M867 229l11-10" stroke="#8da67a"/></g>
+<g stroke="#c89d75" stroke-width="1.4"><g transform="translate(283 205)"><circle cy="-6" r="5" fill="#f7dca4"/><circle cx="6" cy="0" r="5" fill="#f4c9aa"/><circle cy="6" r="5" fill="#f7dca4"/><circle cx="-6" cy="0" r="5" fill="#f4c9aa"/><circle r="2.5" fill="#c18a61"/></g><g transform="translate(890 202)"><circle cy="-6" r="5" fill="#f7dca4"/><circle cx="6" cy="0" r="5" fill="#f4c9aa"/><circle cy="6" r="5" fill="#f7dca4"/><circle cx="-6" cy="0" r="5" fill="#f4c9aa"/><circle r="2.5" fill="#c18a61"/></g></g>
+<!-- butterflies -->
+<g stroke="#c98c70" stroke-width="2" stroke-linejoin="round"><g transform="translate(365 87) rotate(-12)"><path d="M0 0Q-20-24-17-5Q-13 7 0 3Q12-24 19-5Q17 8 0 3Z" fill="#f4c39b"/><path d="M0 0v15" stroke="#827e68"/><path d="M0 2l-5-8M0 2l5-8" fill="none"/></g><g transform="translate(800 119) rotate(15) scale(.72)"><path d="M0 0Q-20-24-17-5Q-13 7 0 3Q12-24 19-5Q17 8 0 3Z" fill="#f4c39b"/><path d="M0 0v15" stroke="#827e68"/><path d="M0 2l-5-8M0 2l5-8" fill="none"/></g></g>
+<g fill="#9caf8c" opacity=".7"><ellipse cx="35" cy="231" rx="18" ry="5"/><ellipse cx="1140" cy="231" rx="22" ry="5"/></g>
+</svg>
