@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f0e5">
 <link rel="manifest" href="./manifest.webmanifest">
-<meta name="description" content="温柔记录每天的生活、待办、心情与喝水，也照顾好自己。"><title>每日小记｜日系手帐</title>
+<meta name="description" content="温柔记录每天的生活、待办、心情与喝水，也照顾好自己。"><title>每日小记｜森林水彩手帐</title>
 <style>
 :root{--bg:#f8efe4;--paper:#fffaf3;--ink:#51443d;--muted:#928176;--line:#ead9c7;--accent:#b97f67;--accent2:#e5c5ae;--green:#899a7a;--rose:#d9a7a3;--shadow:0 8px 24px #73533a12}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.5}
@@ -69,6 +69,15 @@ input,textarea,select{border-color:#dfe0d2;background:#fffef9;outline-color:#93a
 @media(max-width:420px){.nature-scene{margin-top:12px}.nature-scene svg{min-height:85px}.card{border-radius:20px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+
+/* Whimsical woodland details: tiny mushrooms, butterflies, and wildflowers */
+.nature-scene{position:relative;background:#eef0df}
+.nature-scene svg{filter:saturate(.92)}
+.goal-card{background-image:radial-gradient(circle at 95% 18%,#f1d8b83b 0 18px,transparent 19px),linear-gradient(120deg,#fffdf4,#edf1e5)}
+.goal-card:after{content:"🦋";position:absolute;right:12px;bottom:7px;font-size:17px;opacity:.56;transform:rotate(-12deg);pointer-events:none;filter:saturate(.7)}
+#page-period .card:first-child{background-image:radial-gradient(ellipse at 97% 7%,#e6eddd70 0 28px,transparent 29px),linear-gradient(145deg,#fffdf5,#f8f5e9)}
+#page-period .card:first-child h2:after{content:"  ✿";font-size:13px;color:#9aa982;vertical-align:2px}
+
 </style>
 </head>
 <body>
@@ -79,7 +88,15 @@ input,textarea,select{border-color:#dfe0d2;background:#fffef9;outline-color:#93a
 <g stroke="#75876b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M75 112V54"/><path d="M75 70Q45 65 48 42Q70 45 75 70Z" fill="#9fb28e"/><path d="M75 83Q101 75 102 52Q80 57 75 83Z" fill="#9fb28e"/><path d="M75 93Q50 90 42 73Q64 71 75 93Z" fill="#b6c5a2"/><path d="M568 109V47"/><path d="M568 65Q536 60 541 34Q562 38 568 65Z" fill="#9fb28e"/><path d="M568 80Q598 69 598 48Q576 52 568 80Z" fill="#9fb28e"/><path d="M568 92Q541 88 535 70Q558 69 568 92Z" fill="#b6c5a2"/></g>
 <g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.5"><ellipse cx="317" cy="119" rx="17" ry="13"/><ellipse cx="307" cy="96" rx="5.5" ry="17" transform="rotate(-12 307 96)"/><ellipse cx="321" cy="95" rx="5.5" ry="18" transform="rotate(8 321 95)"/><circle cx="311" cy="117" r="1.7" fill="#625c51" stroke="none"/><circle cx="323" cy="117" r="1.7" fill="#625c51" stroke="none"/><ellipse cx="317" cy="121" rx="2.5" ry="1.8" fill="#c9948c" stroke="none"/></g>
 <g fill="#f8f4e8" stroke="#a4a995" stroke-width="1.4"><ellipse cx="355" cy="125" rx="11" ry="9"/><circle cx="352" cy="120" r="1.4" fill="#625c51" stroke="none"/><circle cx="360" cy="120" r="1.4" fill="#625c51" stroke="none"/><path d="M349 112l-1-8 7 6M357 110l5-7 1 10" fill="#f8f4e8"/></g>
-<g stroke="#788b70" stroke-width="1.5" stroke-linecap="round" fill="none"><path d="M175 43q7-6 14 0q7-6 14 0"/><path d="M410 55q5-4 10 0q5-4 10 0"/></g><g fill="#d7b77e"><circle cx="143" cy="125" r="2.5"/><circle cx="463" cy="116" r="2.5"/><circle cx="483" cy="132" r="2"/></g>
+<g stroke="#788b70" stroke-width="1.5" stroke-linecap="round" fill="none"><path d="M175 43q7-6 14 0q7-6 14 0"/><path d="M410 55q5-4 10 0q5-4 10 0"/></g><g aria-hidden="true" stroke-linejoin="round" stroke-linecap="round">
+<!-- tiny watercolor mushrooms -->
+<g transform="translate(154 91)" opacity=".96"><path d="M7 23Q8 11 12 10Q17 12 17 23Z" fill="#f3e8d3" stroke="#a6a78e" stroke-width="1.2"/><path d="M1 13Q3 2 12 2Q22 2 24 13Q13 18 1 13Z" fill="#c98270" stroke="#a76f62" stroke-width="1.2"/><circle cx="8" cy="8" r="1.5" fill="#fff4df" stroke="none"/><circle cx="16" cy="10" r="1.3" fill="#fff4df" stroke="none"/><path d="M4 24q8 3 17 0" fill="none" stroke="#91a17d" stroke-width="1.2"/></g>
+<g transform="translate(482 111) scale(.78)" opacity=".94"><path d="M7 23Q8 11 12 10Q17 12 17 23Z" fill="#f3e8d3" stroke="#a6a78e" stroke-width="1.2"/><path d="M1 13Q3 2 12 2Q22 2 24 13Q13 18 1 13Z" fill="#dca58a" stroke="#b77d68" stroke-width="1.2"/><circle cx="8" cy="8" r="1.5" fill="#fff4df" stroke="none"/><circle cx="16" cy="10" r="1.3" fill="#fff4df" stroke="none"/></g>
+<!-- delicate butterflies -->
+<g transform="translate(235 70) rotate(-12)" stroke="#c58d73" stroke-width="1.1"><path d="M0 7Q-16 -5 -13 7Q-11 14 -1 10Q-7 22 0 15Q7 22 2 10Q13 15 14 7Q16 -5 1 7Z" fill="#f2c59a"/><path d="M0 6v12" stroke="#897b65"/><circle cx="-8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/><circle cx="8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/></g>
+<g transform="translate(435 91) scale(.72) rotate(14)" stroke="#c58d73" stroke-width="1.2"><path d="M0 7Q-16 -5 -13 7Q-11 14 -1 10Q-7 22 0 15Q7 22 2 10Q13 15 14 7Q16 -5 1 7Z" fill="#f0c7a9"/><path d="M0 6v12" stroke="#897b65"/><circle cx="-8" cy="5" r="1.4" fill="#fff1d7" stroke="none"/></g>
+</g>
+<g fill="#d7b77e"><circle cx="143" cy="125" r="2.5"/><circle cx="463" cy="116" r="2.5"/><circle cx="483" cy="132" r="2"/></g>
 </svg></div></header>
 <nav id="nav">
 <button class="active" data-page="today">今日</button><button data-page="period" id="periodNav">健康记录</button><button data-page="week">每周</button><button data-page="calendar">月历</button><button data-page="history">统计</button><button data-page="backup">备份</button><a class="nav-link" href="./customers.html">顾客季卡 ↗</a>
