@@ -512,6 +512,63 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 }
 </style>
 
+
+<style id="layout-fix-final-v38">
+/* Final mobile layout override: preserve artwork proportions and keep breathing room. */
+#goalCard.goal-card{
+  box-sizing:border-box!important;
+  min-height:132px!important;
+  padding:16px 16px 16px 31%!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  background-color:#fff8eb!important;
+  background-image:
+    linear-gradient(90deg,rgba(255,248,235,0) 0%,rgba(255,248,235,.08) 23%,rgba(255,248,235,.76) 37%,rgba(255,248,235,.98) 47%,#fff8eb 62%),
+    url("./quote-bunny-carrot.png")!important;
+  background-repeat:no-repeat!important;
+  /* auto height preserves the original image aspect ratio instead of stretching it */
+  background-size:100% 100%,auto 76%!important;
+  background-position:center,left 8px center!important;
+  overflow:hidden!important;
+}
+#goalCard.goal-card .animal{display:none!important;width:0!important;flex:0 0 0!important}
+#goalCard.goal-card>div:not(.animal){
+  box-sizing:border-box!important;
+  min-width:0!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  position:relative!important;
+  z-index:1!important;
+}
+#goalCard.goal-card .quote{font-size:clamp(15px,2.5vw,18px)!important;line-height:1.55!important;overflow-wrap:anywhere!important}
+#goalCard.goal-card .who{font-size:12px!important;margin-top:6px!important}
+#page-today .metric{
+  box-sizing:border-box!important;
+  min-height:112px!important;
+  padding:14px 34% 14px 16px!important;
+  background-color:#f8f1e0!important;
+  background-image:
+    linear-gradient(90deg,#f8f1e0 0%,rgba(248,241,224,.98) 43%,rgba(248,241,224,.55) 62%,rgba(248,241,224,.06) 100%),
+    url("./water-garden-art.png")!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%,auto 78%!important;
+  background-position:center,right 8px center!important;
+}
+#page-today .metric>*{max-width:100%!important;position:relative!important;z-index:1!important}
+@media(max-width:600px){
+  #goalCard.goal-card{min-height:126px!important;padding:14px 14px 14px 31%!important;background-size:100% 100%,auto 74%!important}
+  #goalCard.goal-card .quote{font-size:15px!important;line-height:1.52!important}
+  #goalCard.goal-card .who{font-size:11px!important}
+  #page-today .metric{min-height:106px!important;padding:12px 34% 12px 14px!important;background-size:100% 100%,auto 74%!important}
+}
+@media(max-width:390px){
+  #goalCard.goal-card{padding-left:30%!important;background-size:100% 100%,auto 70%!important}
+  #goalCard.goal-card .quote{font-size:14px!important}
+  #page-today .metric{padding-right:32%!important;background-size:100% 100%,auto 70%!important}
+}
+</style>
 </head>
 <body>
 <header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p>
