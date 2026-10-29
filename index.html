@@ -465,7 +465,7 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 <section class="page" id="page-history"><div class="card"><h2>搜索旧记录</h2><input id="searchInput" placeholder="搜索日期、随笔、待办或心情"><div class="row" style="margin-top:8px"><input type="date" id="fromDate" aria-label="开始日期"><input type="date" id="toDate" aria-label="结束日期"></div><button id="clearSearch" class="smallbtn" style="margin-top:8px">清除筛选</button></div><div class="card"><h2>最近记录</h2><div id="historyList"></div></div><div class="card"><h2>最近 7 天喝水量</h2><div class="chart" id="waterChart"></div><p class="sub">柱状图按每天的总毫升数显示。</p></div><div class="card"><h2>最近 7 天任务完成</h2><div class="chart" id="taskChart"></div><p class="sub">按每天完成的任务次数汇总；同一任务不同日期的完成分别记录。</p></div></section>
 <section class="page health-page" id="page-period">
 <div class="health-hero"><div class="health-hero-copy"><div class="health-leaf" aria-hidden="true">♧</div><h2>身体记录</h2><p>慢慢记录，好好照顾自己。</p></div></div>
-<div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form"><span class="subnav-icon" aria-hidden="true">🌱</span> 身体记录</button><button data-health-target="weight-panel"><span class="subnav-icon" aria-hidden="true">📊</span> 体重追踪</button><button data-health-target="period-panel"><span class="subnav-icon" aria-hidden="true">🗓️</span> 经期记录</button><button data-health-target="healthHistory"><span class="subnav-icon" aria-hidden="true">📖</span> 历史记录</button></div>
+<div class="health-subnav" aria-label="健康记录子导航"><button class="active" data-health-target="health-form"><span class="subnav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20V11M12 14C7 14 4 11 4 6c5 0 8 3 8 8M12 11c0-5 3-8 8-8 0 5-3 8-8 8"/></svg></span> 身体记录</button><button data-health-target="weight-panel"><span class="subnav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V12h4v8M10 20V5h4v15M16 20V9h4v11M3 20h18"/></svg></span> 体重追踪</button><button data-health-target="period-panel"><span class="subnav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M7.5 3v4M16.5 3v4M4 9h16M8 13h2M14 13h2M8 17h2"/></svg></span> 经期记录</button><button data-health-target="healthHistory"><span class="subnav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6c-2.5-2-5.5-2.5-9-1v14c3.5-1.5 6.5-1 9 1M12 6c2.5-2 5.5-2.5 9-1v14c-3.5-1.5-6.5-1-9 1M12 6v14"/></svg></span> 历史记录</button></div>
 <div class="card health-form-card" id="health-form">
 <div class="field"><label for="healthDate">记录日期</label><input type="date" id="healthDate"></div>
 <div class="health-grid">
@@ -975,5 +975,99 @@ input:focus,textarea:focus,select:focus{border-color:#d7a08a!important;box-shado
  .goal-card .quote{font-size:15px!important}
  #page-today>.card:nth-of-type(2) .metric{padding-right:33%!important}
  .page-story-copy{max-width:58%}
+}
+</style>
+
+<style id="forest-storybook-polish-v29">
+/* Homepage: one continuous storybook meadow, with rabbit on the left and clear text space. */
+.goal-card{
+ position:relative!important;isolation:isolate!important;overflow:hidden!important;
+ background-color:#fff8eb!important;
+ background-image:linear-gradient(90deg,rgba(255,248,235,.05) 0%,rgba(255,248,235,.04) 20%,rgba(255,248,235,.82) 34%,rgba(255,248,235,.94) 72%,rgba(255,248,235,.08) 100%),url("./save-meadow-scene.png")!important;
+ background-size:100% 100%,100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.goal-card::before{display:none!important;content:none!important}
+.goal-card .animal{display:none!important}
+.goal-card>div:not(.animal){position:relative!important;z-index:2!important;margin-left:118px!important;max-width:calc(100% - 125px)!important}
+.goal-card .quote{color:#57493e!important}
+.goal-card .who{color:#928272!important}
+
+/* Keep the date line safely in the open sky, never over the rabbit or tree. */
+header p{max-width:54%!important;white-space:normal!important;line-height:1.45!important}
+header h1,header .eyebrow,header p{position:relative;z-index:2}
+header{
+ background-image:linear-gradient(90deg,rgba(255,248,234,.97) 0%,rgba(255,248,234,.88) 34%,rgba(255,248,234,.22) 56%,rgba(255,248,234,0) 100%),url("./health-woodland-scene.png")!important
+}
+
+/* Health hero gets a different view of the same illustrated world, not a duplicate of the homepage header. */
+.health-hero{
+ background-color:#f7f0df!important;
+ background-image:linear-gradient(90deg,rgba(255,248,234,.97) 0%,rgba(255,248,234,.88) 38%,rgba(255,248,234,.22) 62%,rgba(255,248,234,.03) 100%),url("./mushroom-corner.png")!important;
+ background-size:cover!important;background-position:right 46%!important;background-repeat:no-repeat!important;
+}
+.health-hero-copy{max-width:56%!important}
+.health-hero .health-leaf{color:#829b78!important}
+
+/* Use one rounded line-icon family, with no colorful emoji mix. */
+.subnav-icon{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ width:20px!important;height:20px!important;margin-right:4px!important;
+ color:#8a9e7c!important;vertical-align:middle!important;flex:0 0 20px!important
+}
+.subnav-icon svg{
+ display:block;width:19px;height:19px;fill:none;stroke:currentColor;
+ stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round
+}
+.health-subnav button{display:inline-flex!important;align-items:center!important;gap:2px!important}
+.health-subnav button.active .subnav-icon{color:#fff7eb!important}
+
+/* Subtle botanical atmosphere only at the card edges; form controls remain on a clean solid surface. */
+.health-form-card{
+ background-color:#fffaf0!important;
+ background-image:
+  radial-gradient(ellipse at 100% 100%,rgba(219,191,154,.10) 0%,rgba(219,191,154,0) 34%),
+  radial-gradient(ellipse at 0% 100%,rgba(170,193,153,.11) 0%,rgba(170,193,153,0) 27%)!important;
+}
+.health-form-card .field,.health-form-card .health-grid,.health-form-card button,.health-form-card .save-scene-wrap{
+ position:relative;z-index:1
+}
+@media(max-width:600px){
+ .goal-card{background-size:100% 100%,auto 100%!important;background-position:center,left center!important}
+ .goal-card>div:not(.animal){margin-left:94px!important;max-width:calc(100% - 98px)!important}
+ header p{max-width:58%!important;font-size:12px!important}
+ .health-hero{
+  background-position:right center!important;
+  background-image:linear-gradient(90deg,rgba(255,248,234,.98) 0%,rgba(255,248,234,.90) 40%,rgba(255,248,234,.26) 66%,rgba(255,248,234,.02) 100%),url("./mushroom-corner.png")!important
+ }
+ .health-hero-copy{max-width:58%!important}
+ .health-subnav button{gap:1px!important}
+ .subnav-icon{width:18px!important;height:18px!important;flex-basis:18px!important}
+ .subnav-icon svg{width:17px;height:17px}
+}
+@media(max-width:370px){
+ .goal-card>div:not(.animal){margin-left:82px!important;max-width:calc(100% - 84px)!important}
+ header p{max-width:60%!important}
+}
+</style>
+
+<style id="distinct-page-scenes-v30">
+/* Keep the home hero, health hero, weekly hero and calendar hero visually distinct. */
+header{
+ background-image:linear-gradient(90deg,rgba(255,248,234,.92) 0%,rgba(255,248,234,.70) 35%,rgba(255,248,234,.08) 60%,rgba(255,248,234,0) 100%),url("./health-woodland-scene.png")!important;
+}
+.health-hero{
+ background-image:linear-gradient(90deg,rgba(255,248,234,.95) 0%,rgba(255,248,234,.78) 38%,rgba(255,248,234,.08) 68%,rgba(255,248,234,0) 100%),url("./health-banner-stream.png")!important;
+ background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.week-story-hero{
+ background-image:linear-gradient(90deg,rgba(255,248,234,.94) 0%,rgba(255,248,234,.66) 38%,rgba(255,248,234,.04) 68%,rgba(255,248,234,0) 100%),url("./meadow-watercolor.webp")!important;
+ background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+.calendar-story-hero{
+ background-image:linear-gradient(90deg,rgba(255,248,234,.94) 0%,rgba(255,248,234,.66) 38%,rgba(255,248,234,.04) 68%,rgba(255,248,234,0) 100%),url("./woodland-scene.svg")!important;
+ background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+@media(max-width:600px){
+ .health-hero,.week-story-hero,.calendar-story-hero{background-position:center right!important}
 }
 </style>
