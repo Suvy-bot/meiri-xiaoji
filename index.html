@@ -1109,3 +1109,48 @@ header p{max-width:100%!important;white-space:nowrap!important}
 .calendar-story-hero{background-image:linear-gradient(90deg,rgba(255,248,234,.97) 0%,rgba(255,248,234,.82) 35%,rgba(255,248,234,.12) 68%,rgba(255,248,234,0) 100%),url("./calendar-rabbit.png")!important;background-size:cover,auto 100%!important;background-position:center,right center!important;background-repeat:no-repeat!important}
 @media(max-width:600px){.health-hero,.week-story-hero,.calendar-story-hero{background-position:center right!important}}
 </style>
+
+<style id="quote-card-proportion-fix-v33">
+.goal-card{
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:18px 24px 18px clamp(190px,36%,235px)!important;
+  gap:0!important;
+  min-height:156px!important;
+  background-size:100% 100%, auto 100%!important;
+  background-position:center,left center!important;
+}
+.goal-card>div:not(.animal){
+  display:block!important;
+  flex:1 1 0!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin-left:0!important;
+}
+.goal-card .quote{
+  max-width:100%!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  font-size:clamp(16px,2.4vw,21px)!important;
+  line-height:1.6!important;
+}
+.goal-card .who{font-size:13px!important}
+@media(max-width:600px){
+  .goal-card{
+    min-height:142px!important;
+    padding:14px 16px 14px 36%!important;
+    background-size:100% 100%, 42% 100%!important;
+    background-position:center,left center!important;
+  }
+  .goal-card>div:not(.animal){flex:1 1 0!important}
+  .goal-card .quote{font-size:clamp(15px,3.7vw,17px)!important;line-height:1.55!important}
+  .goal-card .who{font-size:12px!important}
+}
+@media(max-width:390px){
+  .goal-card{padding-left:34%!important;min-height:132px!important;background-size:100% 100%, 40% 100%!important}
+  .goal-card .quote{font-size:14px!important}
+  .goal-card .who{font-size:11px!important}
+}
+</style>
