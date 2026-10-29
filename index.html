@@ -430,6 +430,39 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 @media(max-width:390px){.health-grid{grid-template-columns:1fr}.health-hero-copy{max-width:74%}.health-hero{min-height:165px;padding:18px 15px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+
+/* v37: keep the quote bunny proportional and inset from the card edges */
+#goalCard.goal-card{
+  overflow:hidden!important;
+  background-size:100% 100%, 36% auto!important;
+  background-position:center, 10px center!important;
+  background-repeat:no-repeat!important;
+  grid-template-columns:minmax(0,34%) minmax(0,1fr)!important;
+  column-gap:12px!important;
+  padding:14px 18px 14px 10px!important;
+  min-height:148px!important;
+}
+@media(max-width:600px){
+  #goalCard.goal-card{
+    background-size:100% 100%, 36% auto!important;
+    background-position:center, 8px center!important;
+    grid-template-columns:minmax(0,34%) minmax(0,1fr)!important;
+    column-gap:9px!important;
+    padding:12px 14px 12px 9px!important;
+    min-height:142px!important;
+  }
+}
+@media(max-width:390px){
+  #goalCard.goal-card{
+    background-size:100% 100%, 35% auto!important;
+    background-position:center, 7px center!important;
+    grid-template-columns:minmax(0,33%) minmax(0,1fr)!important;
+    column-gap:7px!important;
+    padding:10px 12px 10px 8px!important;
+    min-height:132px!important;
+  }
+}
+
 </style>
 
 <style id="quote-and-water-layout-v36">
