@@ -431,6 +431,54 @@ input:focus,textarea:focus,select:focus{border-color:#9fb398;box-shadow:0 0 0 3p
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
 </style>
+
+<style id="quote-and-water-layout-v36">
+/* One consolidated rule set: illustration stays left, text gets a comfortable column. */
+#goalCard.goal-card{
+  display:grid!important;
+  grid-template-columns:minmax(0,31%) minmax(0,1fr)!important;
+  align-items:center!important;
+  column-gap:12px!important;
+  box-sizing:border-box!important;
+  min-height:148px!important;
+  padding:13px 18px 13px 10px!important;
+  background-color:#fff8eb!important;
+  background-image:linear-gradient(90deg,rgba(255,248,235,0) 0%,rgba(255,248,235,.10) 26%,rgba(255,248,235,.68) 37%,rgba(255,248,235,.97) 47%,#fff8eb 58%),url("./quote-bunny-carrot.png")!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%,32% 100%!important;
+  background-position:center,left center!important;
+}
+#goalCard.goal-card .animal{display:none!important;width:0!important;height:0!important;flex:0 0 0!important}
+#goalCard.goal-card>div:not(.animal){grid-column:2!important;min-width:0!important;width:100%!important;max-width:none!important;margin:0!important;position:relative!important;z-index:1!important}
+#goalCard.goal-card .quote{width:100%!important;max-width:none!important;font-size:clamp(15px,2.25vw,21px)!important;line-height:1.55!important;overflow-wrap:break-word!important;word-break:normal!important;color:#51443b!important}
+#goalCard.goal-card .who{font-size:13px!important;margin-top:6px!important;color:#8e7d6c!important}
+
+/* Let the water summary text use the available left area; keep the artwork on the right. */
+#page-today .metric{
+  position:relative!important;
+  min-height:112px!important;
+  padding:13px 37% 13px 13px!important;
+  background-image:linear-gradient(90deg,#f8f1e0 0%,rgba(248,241,224,.98) 30%,rgba(248,241,224,.72) 43%,rgba(248,241,224,.18) 55%,rgba(248,241,224,0) 66%),url("./water-garden-art.png")!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%,42% 100%!important;
+  background-position:center,right center!important;
+}
+#page-today .metric>*{max-width:100%!important}
+#page-today .metric .num{font-size:clamp(27px,4vw,36px)!important}
+@media(max-width:600px){
+  #goalCard.goal-card{grid-template-columns:minmax(0,31%) minmax(0,1fr)!important;column-gap:9px!important;min-height:142px!important;padding:12px 14px 12px 9px!important;background-size:100% 100%,32% 100%!important}
+  #goalCard.goal-card .quote{font-size:clamp(14px,3.6vw,17px)!important;line-height:1.52!important}
+  #goalCard.goal-card .who{font-size:12px!important;margin-top:5px!important}
+  #page-today .metric{min-height:112px!important;padding:12px 37% 12px 12px!important;background-size:100% 100%,42% 100%!important}
+}
+@media(max-width:390px){
+  #goalCard.goal-card{grid-template-columns:minmax(0,30%) minmax(0,1fr)!important;column-gap:7px!important;min-height:132px!important;padding:10px 12px 10px 8px!important;background-size:100% 100%,31% 100%!important}
+  #goalCard.goal-card .quote{font-size:14px!important;line-height:1.48!important}
+  #goalCard.goal-card .who{font-size:11px!important}
+  #page-today .metric{padding-right:36%!important;background-size:100% 100%,40% 100%!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="eyebrow">A LITTLE NOTE EVERY DAY</div><h1>每日小记</h1><p id="todayLine">把日子慢慢记下来。</p>
@@ -1110,124 +1158,6 @@ header p{max-width:100%!important;white-space:nowrap!important}
 @media(max-width:600px){.health-hero,.week-story-hero,.calendar-story-hero{background-position:center right!important}}
 </style>
 
-<style id="quote-card-proportion-fix-v33">
-.goal-card{
-  box-sizing:border-box!important;
-  display:flex!important;
-  align-items:center!important;
-  padding:18px 24px 18px clamp(190px,36%,235px)!important;
-  gap:0!important;
-  min-height:156px!important;
-  background-size:100% 100%, auto 100%!important;
-  background-position:center,left center!important;
-}
-.goal-card>div:not(.animal){
-  display:block!important;
-  flex:1 1 0!important;
-  width:100%!important;
-  max-width:none!important;
-  min-width:0!important;
-  margin-left:0!important;
-}
-.goal-card .quote{
-  max-width:100%!important;
-  overflow-wrap:normal!important;
-  word-break:normal!important;
-  font-size:clamp(16px,2.4vw,21px)!important;
-  line-height:1.6!important;
-}
-.goal-card .who{font-size:13px!important}
-@media(max-width:600px){
-  .goal-card{
-    min-height:142px!important;
-    padding:14px 16px 14px 36%!important;
-    background-size:100% 100%, 42% 100%!important;
-    background-position:center,left center!important;
-  }
-  .goal-card>div:not(.animal){flex:1 1 0!important}
-  .goal-card .quote{font-size:clamp(15px,3.7vw,17px)!important;line-height:1.55!important}
-  .goal-card .who{font-size:12px!important}
-}
-@media(max-width:390px){
-  .goal-card{padding-left:34%!important;min-height:132px!important;background-size:100% 100%, 40% 100%!important}
-  .goal-card .quote{font-size:14px!important}
-  .goal-card .who{font-size:11px!important}
-}
-</style>
-
-<style id="quote-card-balanced-proportions-v34">
-.goal-card{
- box-sizing:border-box!important;display:grid!important;
- grid-template-columns:minmax(0,34%) minmax(0,1fr)!important;
- align-items:center!important;column-gap:12px!important;
- padding:14px 20px 14px 14px!important;min-height:148px!important;
- background-color:#fff8eb!important;
- background-image:linear-gradient(90deg,rgba(255,248,235,0) 0%,rgba(255,248,235,.05) 25%,rgba(255,248,235,.70) 39%,rgba(255,248,235,.98) 49%,#fff8eb 100%),url("./quote-bunny-carrot.png")!important;
- background-repeat:no-repeat!important;background-size:100% 100%,39% 100%!important;background-position:center,left center!important;
-}
-.goal-card .animal{display:none!important;width:0!important;height:0!important}
-.goal-card>div:not(.animal){grid-column:2!important;min-width:0!important;width:100%!important;max-width:none!important;margin:0!important;position:relative!important;z-index:1!important}
-.goal-card .quote{max-width:none!important;width:100%!important;font-size:clamp(15px,2.3vw,21px)!important;line-height:1.55!important;overflow-wrap:break-word!important;word-break:normal!important;color:#51443b!important}
-.goal-card .who{margin-top:7px!important;font-size:13px!important;color:#8e7d6c!important}
-@media(max-width:600px){
- .goal-card{grid-template-columns:minmax(0,34%) minmax(0,1fr)!important;column-gap:10px!important;padding:12px 15px 12px 12px!important;min-height:136px!important;background-size:100% 100%,39% 100%!important}
- .goal-card .quote{font-size:clamp(14px,3.7vw,17px)!important;line-height:1.55!important}
- .goal-card .who{font-size:12px!important;margin-top:5px!important}
-}
-@media(max-width:390px){
- .goal-card{grid-template-columns:minmax(0,32%) minmax(0,1fr)!important;column-gap:8px!important;min-height:128px!important;padding:10px 12px 10px 10px!important;background-size:100% 100%,37% 100%!important}
- .goal-card .quote{font-size:14px!important;line-height:1.5!important}
- .goal-card .who{font-size:11px!important}
-}
-</style>
 
 
-<style id="final-mobile-art-balance-v35">
-/* Keep the quote illustration and copy in clearly separated, stable areas. */
-#goalCard.goal-card{
-  display:grid!important;
-  grid-template-columns:minmax(0,35%) minmax(0,1fr)!important;
-  align-items:center!important;
-  column-gap:clamp(8px,2vw,16px)!important;
-  box-sizing:border-box!important;
-  min-height:150px!important;
-  padding:14px 18px 14px 12px!important;
-  background-color:#fff8eb!important;
-  background-image:
-    linear-gradient(90deg,rgba(255,248,235,0) 0%,rgba(255,248,235,.02) 27%,rgba(255,248,235,.48) 37%,rgba(255,248,235,.94) 48%,#fff8eb 58%),
-    url("./quote-bunny-carrot.png")!important;
-  background-repeat:no-repeat!important;
-  background-size:100% 100%,36% 100%!important;
-  background-position:center,left center!important;
-}
-#goalCard.goal-card .animal{display:none!important;width:0!important;height:0!important;flex:0 0 0!important}
-#goalCard.goal-card>div:not(.animal){grid-column:2!important;min-width:0!important;width:100%!important;max-width:none!important;margin:0!important;position:relative!important;z-index:1!important}
-#goalCard.goal-card .quote{font-size:clamp(15px,2.25vw,21px)!important;line-height:1.55!important;overflow-wrap:normal!important;word-break:normal!important}
-#goalCard.goal-card .who{font-size:13px!important;margin-top:6px!important}
 
-/* The water illustration was being hidden by an overly long opaque gradient. */
-#page-today .metric{
-  background-image:
-    linear-gradient(90deg,rgba(248,241,224,1) 0%,rgba(248,241,224,1) 34%,rgba(248,241,224,.72) 43%,rgba(248,241,224,.18) 51%,rgba(248,241,224,0) 58%),
-    url("./water-garden-art.png")!important;
-  background-repeat:no-repeat!important;
-  background-size:100% 100%,auto 100%!important;
-  background-position:center,right center!important;
-  padding-right:40%!important;
-}
-#page-today .metric>*{max-width:58%!important}
-#page-today .metric .num{font-size:clamp(27px,4vw,36px)!important}
-@media(max-width:600px){
-  #goalCard.goal-card{grid-template-columns:minmax(0,35%) minmax(0,1fr)!important;column-gap:9px!important;min-height:142px!important;padding:12px 14px 12px 10px!important;background-size:100% 100%,36% 100%!important}
-  #goalCard.goal-card .quote{font-size:clamp(14px,3.6vw,17px)!important;line-height:1.52!important}
-  #goalCard.goal-card .who{font-size:12px!important;margin-top:5px!important}
-  #page-today .metric{min-height:112px!important;padding-right:40%!important;background-size:100% 100%,auto 100%!important}
-  #page-today .metric>*{max-width:58%!important}
-}
-@media(max-width:390px){
-  #goalCard.goal-card{grid-template-columns:minmax(0,33%) minmax(0,1fr)!important;column-gap:7px!important;min-height:132px!important;padding:10px 12px 10px 8px!important;background-size:100% 100%,34% 100%!important}
-  #goalCard.goal-card .quote{font-size:14px!important;line-height:1.48!important}
-  #goalCard.goal-card .who{font-size:11px!important}
-  #page-today .metric{padding-right:39%!important}
-}
-</style>
