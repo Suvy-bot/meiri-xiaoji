@@ -1248,6 +1248,27 @@ header p{max-width:100%!important;white-space:nowrap!important}
 @media(max-width:600px){.health-hero,.week-story-hero,.calendar-story-hero{background-position:center right!important}}
 </style>
 
-
-
+<style id="final-quote-card-layout-v39">
+/* Final override: reserve a dedicated illustration column so text never overlaps the rabbit. */
+.goal-card{
+  display:block!important;position:relative!important;box-sizing:border-box!important;overflow:hidden!important;
+  min-height:172px!important;padding:20px 22px 20px 38%!important;
+  background-color:#fff8eb!important;
+  background-image:linear-gradient(90deg,rgba(255,248,235,0) 0%,rgba(255,248,235,.08) 25%,rgba(255,248,235,.82) 38%,rgba(255,248,235,.98) 53%,rgba(255,248,235,1) 100%),url("./quote-bunny-carrot.png")!important;
+  background-repeat:no-repeat!important;background-size:100% 100%,auto 72%!important;background-position:center,14px center!important;
+}
+.goal-card::before{display:none!important;content:none!important}
+.goal-card .animal{display:none!important;width:0!important;flex:0 0 0!important}
+.goal-card>div:not(.animal){display:block!important;position:relative!important;z-index:2!important;box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0!important}
+.goal-card .quote{display:block!important;font-size:clamp(15px,2.6vw,20px)!important;line-height:1.55!important;overflow-wrap:break-word!important;color:#51443b!important}
+.goal-card .who{margin-top:7px!important;font-size:13px!important;color:#8e7d6c!important}
+@media(max-width:600px){
+ .goal-card{min-height:160px!important;padding:18px 16px 18px 39%!important;background-size:100% 100%,auto 68%!important;background-position:center,10px center!important}
+ .goal-card .quote{font-size:15px!important;line-height:1.55!important}.goal-card .who{font-size:12px!important}
+}
+@media(max-width:380px){
+ .goal-card{min-height:150px!important;padding-left:40%!important;background-size:100% 100%,auto 62%!important;background-position:center,8px center!important}
+ .goal-card .quote{font-size:14px!important;line-height:1.5!important}
+}
+</style>
 
