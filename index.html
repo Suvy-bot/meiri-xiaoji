@@ -1543,3 +1543,56 @@ header p#todayLine .header-date,header p#todayLine .header-tagline{display:block
  #goalCard.goal-card .quote{font-size:14px!important;line-height:1.48!important}
 }
 </style>
+
+<style id="quote-card-remove-stale-background-v43">
+/* Remove the old full-card background artwork that leaves a thin horizontal seam.
+   Use the embedded standalone bunny image instead, keeping the complete image visible. */
+#goalCard.goal-card{
+  background-image:none!important;
+  background-color:#fff8eb!important;
+  background-size:auto!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,41%) minmax(0,1fr)!important;
+  align-items:center!important;
+  column-gap:clamp(8px,2.5vw,18px)!important;
+  overflow:hidden!important;
+  border:1px solid #e7dac7!important;
+}
+#goalCard.goal-card::before,#goalCard.goal-card::after{
+  content:none!important;display:none!important;background-image:none!important;
+}
+#goalCard.goal-card .animal{
+  display:flex!important;visibility:visible!important;
+  grid-column:1!important;grid-row:1!important;
+  align-items:center!important;justify-content:center!important;
+  width:100%!important;height:auto!important;min-width:0!important;
+  min-height:0!important;margin:0!important;padding:0!important;
+  overflow:visible!important;background:none!important;background-image:none!important;
+  border:0!important;box-shadow:none!important;
+}
+#goalCard.goal-card .quote-bunny-art{
+  display:block!important;width:100%!important;height:auto!important;
+  max-width:100%!important;max-height:190px!important;
+  object-fit:contain!important;object-position:center!important;
+  position:static!important;inset:auto!important;transform:none!important;
+  clip-path:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+}
+#goalCard.goal-card>div:not(.animal){
+  grid-column:2!important;grid-row:1!important;
+  min-width:0!important;width:100%!important;max-width:none!important;
+  margin:0!important;padding:0!important;position:static!important;
+}
+@media(max-width:600px){
+  #goalCard.goal-card{grid-template-columns:minmax(0,41%) minmax(0,1fr)!important;column-gap:8px!important;padding:12px 13px!important;min-height:142px!important}
+  #goalCard.goal-card .quote-bunny-art{max-height:170px!important}
+}
+@media(max-width:360px){
+  #goalCard.goal-card{grid-template-columns:minmax(0,40%) minmax(0,1fr)!important;column-gap:7px!important;padding:10px!important;min-height:136px!important}
+  #goalCard.goal-card .quote-bunny-art{max-height:150px!important}
+}
+</style>
+
+</body>
+</html>
